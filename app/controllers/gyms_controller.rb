@@ -2,7 +2,7 @@ class GymsController < ApplicationController
   before_action :set_gym, only: [:show, :edit, :update, :destroy]
 
   def index
-    @gymss = Gym.all
+    @gyms = Gym.all
   end
 
   def new
@@ -42,6 +42,8 @@ class GymsController < ApplicationController
   end
 
   def gym_params
-      params.require(:gym).permit(:equipment, :location, :availability, :type_of_gym, :cost, :user_id, :name )
+      params.require(:gym).permit(:name)
+      
+      # (:equipment, :location, :availability, :type_of_gym, :cost, :user_id, :name )
   end
 end

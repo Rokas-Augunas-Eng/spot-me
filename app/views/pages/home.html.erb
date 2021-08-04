@@ -2,17 +2,28 @@
   <%= video_tag "fitnessvid.mp4",autoplay: :autoplay, size: "100%x100%", loop: :loop, mute: :mute, class: "video" %>
 
   <div class="searchbar">
-
-    <div class="where">
     <%= form_tag gyms_path, method: "GET" do %>
-  <%= label_tag :search_by_location, 'Where?' %>
-  <%= text_field_tag :search_by_location, params[:search_by_location] %>
-  <%= submit_tag "Search" %>
-<% end %>
-    </div>
+    <%= label_tag :search_by_location, 'Where?' %>
+    <%= text_field_tag :search_by_location, params[:search_by_location] %>
+    <%= submit_tag "Search" %>
+    <% end %>
   </div>
 </div>
-<div class="position-relative">
+
+<div class="cardbox">
+  <div class="cards">
+    <% @first_8.each do |gym| %>
+    <div class="card rounded" style="width: 16rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to gym.name, gym_path(gym) %></h5>
+      </div>
+    </div>
+      <% end %>
+    </div>
+</div>
+
+
+<!-- <div class="position-relative">
   <div class="p-2">
     <div class="row">
       <div class="col-sm-16 d-flex">
@@ -27,7 +38,7 @@
     </div>
   </div>
 </div>
-
+-->
 
 
   <!--  <div class="col-sm-16 d-flex">

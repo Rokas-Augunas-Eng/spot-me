@@ -11,17 +11,57 @@
 </div>
 
 <div class="cardbox">
+  <div class="near_me">
+    <h4> Gyms near me </h4>
+  </div>
   <div class="cards">
-    <% @first_8.each do |gym| %>
+    <% @first_4.each do |gym| %>
     <div class="card rounded" style="width: 16rem;">
+      <img class="card-img-top" src="INSERT-CLOUDINARY-IMAGE">
       <div class="card-body">
         <h5 class="card-title"><%= link_to gym.name, gym_path(gym) %></h5>
       </div>
     </div>
-      <% end %>
+    <% end %>
+  </div>
+  <div class="gym_type">
+    <h4> Gym Type</h4>
+  </div>
+  <div class="cards">
+    <div class="card rounded" style="width: 16rem;">
+      <div class="card-img-top"><%= image_tag("gym_image_1", height: 300, width: 255, crop: :fill) %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Cardio</h5>
+      </div>
     </div>
+    <div class="card rounded" style="width: 16rem;">
+      <div class="card-img-top"><%= image_tag("gym_image_2", height: 300, width: 255, crop: :fill) %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Weights</h5>
+      </div>
+    </div>
+    <div class="card rounded" style="width: 16rem;">
+      <div class="card-img-top"><%= image_tag("gym_image_3", height: 300, width: 255, crop: :fill) %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Functional</h5>
+      </div>
+
+    </div>
+    <div class="card rounded" style="width: 16rem;">
+      <div class="card-img-top"><%= image_tag("gym_image_4", height: 300, width: 255, crop: :fill) %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Crossfit</h5>
+      </div>
+    </div>
+  </div>
 </div>
 
+
+<!-- card-image-top height: 300, width: 400, crop: :fill -->
 
 <!-- <div class="position-relative">
   <div class="p-2">

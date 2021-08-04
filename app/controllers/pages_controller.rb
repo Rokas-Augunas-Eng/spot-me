@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @gyms = Gym.all
-    @first_8 = @gyms.first(8)
+    @first_4 = @gyms.first(4)
 
   end
 end

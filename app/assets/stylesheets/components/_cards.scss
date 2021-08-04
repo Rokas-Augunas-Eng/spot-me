@@ -1,12 +1,14 @@
 .cardbox {
-  display: flex;
   margin-top: -400px;
 }
+
 .cards {
+  float: left;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-row-gap: px;
+  column-gap: 32px;
   padding: 16px;
   align-items: center;
   justify-content: center;

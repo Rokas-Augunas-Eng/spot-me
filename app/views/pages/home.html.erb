@@ -1,5 +1,5 @@
 <div class="vid_holder">
-  <%= video_tag "fitnessvid.mp4",autoplay: :autoplay, size: "100%x100%", loop: :loop, mute: :mute, class: "video" %>
+  <%= video_tag "fitnessvid.mp4",autoplay: :autoplay, muted: :muted, size: "100%x100%", loop: :loop, mute: :mute, class: "video" %>
 
   <div class="searchbar">
     <%= form_tag gyms_path, method: "GET" do %>
@@ -90,8 +90,8 @@
           <p class="card-text">Gym equipment<%# gym.equipment %> </p>
         </div> -->
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%# <h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p> %>
 
 <% if user_signed_in? %>
   <% current_user.email %>

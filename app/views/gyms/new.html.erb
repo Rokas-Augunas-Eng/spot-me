@@ -1,0 +1,9 @@
+<h3>Create a gym</h3>
+
+<%= simple_form_for(@gym) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :type_of_gym %>
+  <%= f.input :equipment %>
+  <%= f.submit %>
+<% end %>

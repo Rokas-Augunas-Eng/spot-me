@@ -1,9 +1,12 @@
 <div class="container">
   <div class="row justify-content-center align-items-center mt-4">
     <div class="col-6">
-    <%= @gym.name %>
-    <%= @gym.location %>
-    <%= link_to "Reserve", new_booking_path(@booking) %>
+    <h3><%= @gym.name %></h3>
+    <p>Location: <%= @gym.location %></p>
+    <p>Gym type: <%= @gym.type_of_gym %></p>
+    <p>Equipment: <%= @gym.equipment %></p>
+    <button type="button" class="btn btn-success"><%= link_to "Reserve", new_booking_path(@booking) %>
+    </button>
     </div>
   </div>
 </div>

@@ -2,6 +2,15 @@ class GymsController < ApplicationController
   before_action :set_gym, only: [:show, :edit, :update, :destroy]
 
   def index
+    @gyms = Gym.all
+
+     @markers = @gyms.geocoded.map do |gym|
+      {
+        lat: gym.latitude,
+        lng: gym.longitude
+      }
+    end 
+
     if params.key?(:search_by_location)
       @gyms = Gym.where("location = ?", params[:search_by_location])
     else
@@ -24,6 +33,7 @@ class GymsController < ApplicationController
 
   def show
     @gym = Gym.find(params[:id])
+    @booking = Booking.new 
   end
 
   def edit

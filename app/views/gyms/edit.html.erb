@@ -1,0 +1,11 @@
+<h3>Edit gym</h3>
+
+<%= simple_form_for(@gym) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :type_of_gym %>
+  <%= f.input :equipment %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Remove gym", gym_path(@gym), method: :delete, data: { confirm: "Are you sure you want to delete your home gym?" } %>

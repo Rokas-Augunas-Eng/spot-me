@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(bookings_params)
+    @gym = Gym.find(params[:gym_id])
     @booking.gym = @gym
     if @booking.save
     redirect_to gym_path(@gym)
@@ -25,7 +26,7 @@ class BookingsController < ApplicationController
   private
 
   def find_gym
-    @gym = Gym.find(params[:gym_id])
+    @gym = Gym.find(params[:id])
   end
 
   def booking_params

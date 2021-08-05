@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center mt-4">
+    <div class="col-6">
+    <%= @gym.name %>
+    <%= @gym.location %>
+    <%= link_to "Reserve", new_booking_path(@booking) %>
+    </div>
+  </div>
+</div>

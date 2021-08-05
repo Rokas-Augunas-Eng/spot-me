@@ -89,3 +89,11 @@
           <h5 class="card-title">Gym name<%#gym.name  %></h5>
           <p class="card-text">Gym equipment<%# gym.equipment %> </p>
         </div> -->
+
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+<% if user_signed_in? %>
+  <% current_user.email %>
+<% end %>
+

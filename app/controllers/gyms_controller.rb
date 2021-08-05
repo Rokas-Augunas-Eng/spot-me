@@ -10,6 +10,12 @@ class GymsController < ApplicationController
         lng: gym.longitude
       }
     end 
+
+    if params.key?(:search_by_location)
+      @gyms = Gym.where("location = ?", params[:search_by_location])
+    else
+      @gyms = Gym.all
+    end
   end
 
   def new
@@ -51,7 +57,7 @@ class GymsController < ApplicationController
 
   def gym_params
       params.require(:gym).permit(:name)
-      
+
       # (:equipment, :location, :availability, :type_of_gym, :cost, :user_id, :name )
   end
 end

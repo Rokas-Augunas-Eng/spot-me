@@ -9,6 +9,8 @@ gem 'devise'
 gem 'rails', '~> 6.0.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
+# Use faker for populating DB
+gem 'faker'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets

@@ -5,10 +5,10 @@
       <div class="card-product">
       <img src="https://www.leisureopportunities.co.uk/images/2020/HIGH346040_712133_137408.jpg" />
         <div class="card-product-infos">
-          <%= link_to gym, gym_path(gym) %>
-          <%= gym.type_of_gym %> in <%= gym.location %>
-          <%= gym.name %>
-          <%= gym.equipment %>
+          <p><%= link_to gym.name, gym_path(gym) %></p>
+          <p>Gym type: <%= gym.type_of_gym %></p>
+          <p>Equipment: <%= gym.equipment %></p>
+          <p>Location: <%= gym.location %></p>
         </div>
       </div>
         <% end %> 
@@ -18,6 +18,6 @@
      style="width: 100%; height: 100vh;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
-</div>
-</div>
+  </div>

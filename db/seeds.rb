@@ -30,7 +30,7 @@ Gym.create!([{
   user_id: 23
 },
 {
-  equipment: "treadmil, yoga mats",
+  equipment: "treadmill, yoga mats",
   location: "208-210 Old Kent Rd, London",
   type_of_gym: "Running",
   name: "Running away from your troubles",

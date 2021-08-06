@@ -1,3 +1,23 @@
+
+<div class="intro">
+  <div class="intro-text">
+    <h1 class="hide">
+      <span class="text">Smash your</span>
+    </h1>
+    <h1 class="hide">
+      <span class="text">Fitness Goals with</span>
+    </h1>
+    <h1 class="hide">
+      <span class="text">Spot Me</span>
+    </h1>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+
+<div class="slider"></div>
+
+
 <div class="vid_holder">
   <%= video_tag "fitnessvid.mp4",autoplay: :autoplay, muted: :muted, size: "100%x100%", loop: :loop, mute: :mute, class: "video" %>
 
@@ -94,6 +114,6 @@
 <p>Find me in app/views/pages/home.html.erb</p> %>
 
 <% if user_signed_in? %>
-  <% current_user.email %>
+<% current_user.email %>
 <% end %>
 

@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'profile', to: 'pages#profile'
 
-  resources :gyms 
-  resources :bookings, only:[:new, :create, :index]
+  resources :gyms do
+    resources :bookings, only:[:new, :create, :index]
+  end
 end
   # For future implementaiton admin access only  
   # resources :bookings, only:[:delete, :update, :edit, :destroy] 

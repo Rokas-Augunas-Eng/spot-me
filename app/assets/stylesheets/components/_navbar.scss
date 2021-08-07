@@ -1,8 +1,12 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
-  // [...]
-  background-color: transparent;
+  background: rgba(197, 197, 197, 0.39);
+  // filter:alpha(opacity=50);
+  // -moz-opacity:0.5;
+  // -khtml-opacity: 0.0;
+  // opacity: 0.3;
+  // // [...]
+  // // background-color: transparent;
   transition: 0.5s background-color ease;
   position: fixed;
   top: 0;
@@ -20,4 +24,10 @@
   border-radius: 15px;
   border: 2px solid rgb(0,0,0);
   box-shadow: 2px 2px 5px grey;
+}
+
+.nav-item {
+  background: #23B8BF;
+  border-radius: 20px;
+  border: black;
 }

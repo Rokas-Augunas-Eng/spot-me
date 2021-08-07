@@ -13,14 +13,14 @@ puts "Gym database deleted"
 # User.destroy_all
 # puts "User database deleted"
 
-# 10.times do 
+# 10.times do
 #   User.create!([
 #     email: Faker::Internet.email,
-#     password: "123456", 
+#     password: "123456",
 #     first_name: Faker::Name.first_name,
-#     last_name: Faker::Name.last_name  
+#     last_name: Faker::Name.last_name
 #   ])
-# end 
+# end
 
 Gym.create!([{
   equipment: "free weights",

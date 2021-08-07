@@ -1,7 +1,10 @@
 <div class="container">
-  <div class="row justify-content-center align-items-center mt-4">
+  <div class="row justify-content-center align-items-center" style="margin-top: 200px;">
     <div class="col-6">
-    <h3><%= @gym.name %></h3>
+      <% if @gym.photo.attached? %>
+        <%= cl_image_tag @gym.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <h3><%= @gym.name %></h3>
       <p>Location: <%= @gym.location %></p>
       <p>Gym type: <%= @gym.type_of_gym %></p>
       <p>Equipment: <%= @gym.equipment %></p>

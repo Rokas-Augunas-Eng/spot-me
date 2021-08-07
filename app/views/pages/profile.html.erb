@@ -70,13 +70,14 @@
 
         <div
         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-        <h6 class="m-0 font-weight-bold text-primary">My Gyms</h6>
-        <% current_user.gyms.each do |gym| %>
-        <%= gym.name %>
-        <% end %>
-      </div>
+          <h6 class="m-0 font-weight-bold text-primary">My Gyms</h6>
+          <%= link_to "Add new gym", new_gym_path, class: "btn btn-primary" %>
+        </div>
 
       <div class="card-body">
+        <% current_user.gyms.each do |gym| %>
+          <%= link_to gym.name, gym_path(gym) %>
+        <% end %>
       </div>
     </div>
   </div>

@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     find_gym
     @booking.gym = @gym
     if @booking.save
-      redirect_to gym_path(@gym)
+      redirect_to profile_path
     else
       render :new  
     end 

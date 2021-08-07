@@ -1,8 +1,11 @@
 <div class="container">
   <div class="row justify-content-center align-items-center mt-4">
     <div class="col-6"> 
-      <h1>Your reservation at Running away from your troubles is pending</h1> 
-      <h3>The gym owner will confirm the reservation in the next 12 hours</h3>
+      <%= simple_form_for [gmy, booking ] do |f| %>
+        <%= f.input :booking_start, as: :date %>
+        <%= f.input :booking_end, as: :date %>
+        <%= f.submit "Reserve", class: "btn-search btn-search-index" %>
+      <% end %>
     </div>
   </div>
 </div>

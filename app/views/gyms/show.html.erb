@@ -2,11 +2,20 @@
   <div class="row justify-content-center align-items-center mt-4">
     <div class="col-6">
     <h3><%= @gym.name %></h3>
-    <p>Location: <%= @gym.location %></p>
-    <p>Gym type: <%= @gym.type_of_gym %></p>
-    <p>Equipment: <%= @gym.equipment %></p>
-    <button type="button" class="btn btn-success"><%= link_to "Reserve", new_booking_path(@booking) %>
-    </button>
+      <p>Location: <%= @gym.location %></p>
+      <p>Gym type: <%= @gym.type_of_gym %></p>
+      <p>Equipment: <%= @gym.equipment %></p>
     </div>
+      <%= render 'bookings/form', gym: @gym, booking: @booking %>
   </div>
 </div>
+
+<div id="map"
+  style="width: 100%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+
+
+

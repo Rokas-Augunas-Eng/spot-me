@@ -11,12 +11,12 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(bookings_params)
+    @booking = Booking.new(booking_params)
     @booking.user = current_user
     find_gym
     @booking.gym = @gym
     if @booking.save
-      redirect_to gym_path(@gym)
+      redirect_to profile_path
     else
       render :new  
     end 

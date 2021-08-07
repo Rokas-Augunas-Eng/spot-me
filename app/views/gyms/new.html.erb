@@ -5,8 +5,9 @@
     <%= simple_form_for(@gym) do |f| %>
       <%= f.input :name %>
       <%= f.input :location %>
-      <%= f.input :type_of_gym %>
+      <%= f.input :type_of_gym, collection: ["Weights", "Cardio", "Yoga Studio"] %>
       <%= f.input :equipment %>
+      <%= f.input :cost %>
       <%= f.submit %>
     <% end %> 
     </div>

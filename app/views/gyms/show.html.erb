@@ -6,7 +6,9 @@
       <p>Gym type: <%= @gym.type_of_gym %></p>
       <p>Equipment: <%= @gym.equipment %></p>
     </div>
+    <% if @gym.user != current_user %>
       <%= render 'bookings/form', gym: @gym, booking: @booking %>
+      <% end %>
   </div>
 </div>
 

@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(bookings_params)
+    @booking = Booking.new(booking_params)
     @booking.user = current_user
     find_gym
     @booking.gym = @gym

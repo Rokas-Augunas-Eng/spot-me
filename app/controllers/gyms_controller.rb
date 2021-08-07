@@ -9,10 +9,10 @@ class GymsController < ApplicationController
         lat: gym.latitude,
         lng: gym.longitude
       }
-    end 
+    end
 
-    if params.key?(:search_by_location)
-      @gyms = Gym.where("location = ?", params[:search_by_location])
+    if params[:search_by_location].present?
+      @gyms = Gym.where("location ILIKE ?", "%#{params[:search_by_location]}%")
     else
       @gyms = Gym.all
     end
@@ -33,7 +33,7 @@ class GymsController < ApplicationController
 
   def show
     @gym = Gym.find(params[:id])
-    @booking = Booking.new 
+    @booking = Booking.new
   end
 
   def edit

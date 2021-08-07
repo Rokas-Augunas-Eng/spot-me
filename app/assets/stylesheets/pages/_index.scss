@@ -1,6 +1,23 @@
 // Import page-specific CSS files here.
-#map {
-  height: 100vh;
+#map{
   position: sticky;
-  top: 0;
+  top: 90px;
+  margin-bottom: 20px;
+  z-index: -1;
+}
+
+.index-page {
+  margin-top: 90px;
+}
+
+.index-title {
+  margin-left: 20px;
+  margin-bottom: 20px
+}
+
+a {
+  text-decoration: none;
+  &:hover { 
+  text-decoration: none;
+  }
 }

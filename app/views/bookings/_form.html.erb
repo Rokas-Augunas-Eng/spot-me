@@ -1,11 +1,6 @@
-<div class="container">
-  <div class="row justify-content-center align-items-center mt-4">
-    <div class="col-6"> 
-      <%= simple_form_for [gym, booking] do |f| %>
-        <%= f.input :booking_start, as: :datetime, html5: true %>
-        <%= f.input :booking_end, as: :datetime, html5: true %>
-        <%= f.submit "Reserve", class: "btn-search btn-search-index" %>
-      <% end %>
-    </div>
-  </div>
-</div>
+    <%= simple_form_for [gym, booking] do |f| %>
+      <%= f.input :booking_start, as: :datetime, html5: true %>
+      <%= f.input :booking_end, as: :datetime, html5: true %>
+      <%= f.submit "Reserve", class: "btn-search btn-search-index" %>
+    <% end %>
+    

@@ -1,9 +1,9 @@
 // Import page-specific CSS files here.
-#map{
+#map {
   position: sticky;
   top: 90px;
   margin-bottom: 20px;
-  z-index: -1;
+  z-index: 1;
 }
 
 .index-page {

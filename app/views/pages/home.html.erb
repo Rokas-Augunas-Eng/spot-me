@@ -19,15 +19,25 @@
 
 <div class="vid_holder">
   <%= video_tag "fitnessvid.mp4",autoplay: :autoplay, muted: :muted, size: "100%x100%", loop: :loop, mute: :mute, class: "video" %>
+</div>
 
-  <div class="searchbar">
-    <%= form_tag gyms_path, method: "GET" do %>
-    <%= label_tag :search_by_location, 'Where?' %>
-    <%= text_field_tag :search_by_location, params[:search_by_location] %>
-    <%= submit_tag "Search" %>
-    <% end %>
+<div class="center_div">
+  <div class="video_content">
+    <h1 class="intro-text">SPOT ME</h1>
+      <h2 class="sub-text">Workout from home, wherever you are.</h2>
+    <div class="searchbar">
+      <%= form_tag gyms_path, method: "GET" do %>
+      <%#= label_tag :search_by_location, 'Where?' %>
+      <%= text_field_tag :search_by_location, params[:search_by_location],
+      placeholder: "Find a gym...", 
+      class: "searchbox"%>
+      <%= submit_tag "Search" %>
+      <% end %>
+    </div>
   </div>
 </div>
+
+
 
 <div class="cardbox">
   <div class="near_me">

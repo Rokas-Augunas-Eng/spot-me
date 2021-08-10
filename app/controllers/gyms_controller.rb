@@ -7,8 +7,10 @@ class GymsController < ApplicationController
      @markers = @gyms.geocoded.map do |gym|
       {
         lat: gym.latitude,
-        lng: gym.longitude
+        lng: gym.longitude,
+        image_url: helpers.asset_url('gymclip')
       }
+
     end
 
     if params[:search_by_location].present?

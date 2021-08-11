@@ -3,7 +3,7 @@
   <div class="d-flex">
     <div class="index-cards">
       <% @gyms.each do |gym| %>
-        <%= link_to gym_path(gym) do %>
+       <%= link_to gym_path(gym) do %>
           <div class="card-product">
             <% if gym.photo.attached? %>
               <%= cl_image_tag gym.photo.key, height: 240, width: 360, crop: :fill %>
@@ -17,7 +17,7 @@
               <p>Location: <%= gym.location %></p>
             </div>
           </div>
-        <% end %> 
+          <% end %> 
       <% end %> 
     </div>
 

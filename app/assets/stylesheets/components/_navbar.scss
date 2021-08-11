@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgba(197, 197, 197, 0.39);
+  background: rgba(197, 197, 197, 0);
   // filter:alpha(opacity=50);
   // -moz-opacity:0.5;
   // -khtml-opacity: 0.0;
@@ -24,6 +24,12 @@
   border-radius: 15px;
   border: 2px solid rgb(0,0,0);
   box-shadow: 2px 2px 5px grey;
+
+  &:hover {
+    background: rgba(232, 232, 232, 0.5);
+    transform: scale(1.10);
+    color: rgb(37, 150, 190);
+  }
 }
 
 .nav-item {
@@ -33,4 +39,10 @@
   border-radius: 15px;
   border: 2px solid black;
   box-shadow: 2px 2px 5px grey;
+
+  &:hover {
+    background: rgba(232, 232, 232, 0.5);
+    transform: scale(1.10);
+    color: rgb(37, 150, 190);
+  }
 }

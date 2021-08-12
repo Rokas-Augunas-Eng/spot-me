@@ -5,7 +5,7 @@
       <% @gyms.each do |gym| %>
        <%= link_to gym_path(gym) do %>
           <div class="card-product">
-            <% if gym.photos.attached? %>
+            <% if gym.photo.attached? %>
               <%= cl_image_tag gym.photo.key, height: 240, width: 360, crop: :fill %>
             <% else %>
               <img src="https://www.leisureopportunities.co.uk/images/2020/HIGH346040_712133_137408.jpg" />
@@ -15,6 +15,7 @@
               <p><i class="fas fa-running"></i> <%= gym.type_of_gym %></p>
               <p><i class="fas fa-dumbbell"></i> <%= gym.equipment %></p>
               <p><i class="fas fa-compass"></i> <%= gym.location %></p>
+              <p><i class="fas fa-money-bill"></i> £<%= gym.cost %> per hour</p>
             </div>
           </div>
           <% end %> 

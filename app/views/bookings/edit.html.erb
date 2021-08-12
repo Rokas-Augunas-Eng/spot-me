@@ -1,16 +1,12 @@
 <div class="container">
-  <h3>Edit booking</h3>
   <div class="row justify-content-center align-items-center mt-4" style="margin-bottom: 250px;">
-    <div class="col-4">
-   <h3>Create a gym</h3>
-    <%= simple_form_for(@gym) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :location %>
-      <%= f.input :type_of_gym, collection: ["Weights", "Cardio", "Yoga Studio"] %>
-      <%= f.input :equipment %>
-      <%= f.input :cost %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit %>
+    <div class="">
+   <h3>Edit booking</h3>
+
+    <%= simple_form_for [ @booking.gym, @booking ] do |f| %>
+      <%= f.input :booking_start, as: :datetime, html5: true %>
+      <%= f.input :booking_end, as: :datetime, html5: true %>
+      <%= f.submit "Update", class: "btn-search btn-search-index" %>
     <% end %> 
     </div>
   </div>

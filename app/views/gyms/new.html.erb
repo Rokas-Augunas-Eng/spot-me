@@ -8,7 +8,7 @@
       <%= f.input :type_of_gym, collection: ["Weights", "Cardio", "Yoga Studio"] %>
       <%= f.input :equipment %>
       <%= f.input :cost %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit %>
     <% end %> 
     </div>

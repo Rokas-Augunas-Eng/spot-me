@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'profile', to: 'pages#profile'
 
   resources :gyms do
-    resources :bookings, only:[:new, :create, :index]
+    resources :bookings, only:[:new, :create, :update, :edit, :index]
   end
 end
   # For future implementaiton admin access only  

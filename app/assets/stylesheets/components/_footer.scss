@@ -1,10 +1,10 @@
 .site-footer
 {
-  background-color:#26272b;
+  background-color: #23B8BF;
   padding:20px 0 10px;
   font-size:10px;
   line-height:12px;
-  color:#737373;
+  color: white;
 }
 .site-footer hr
 {
@@ -25,11 +25,12 @@
 }
 .site-footer a
 {
-  color:#737373;
+  color: white;
+;
 }
 .site-footer a:hover
 {
-  color:#3366cc;
+  color:black;
   text-decoration:none;
 }
 .footer-links
@@ -43,11 +44,11 @@
 }
 .footer-links a
 {
-  color:#737373
+  color: white
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
-  color:#3366cc;
+  color:black;
   text-decoration:none;
 }
 .footer-links.inline li

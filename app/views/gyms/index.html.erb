@@ -5,16 +5,16 @@
       <% @gyms.each do |gym| %>
        <%= link_to gym_path(gym) do %>
           <div class="card-product">
-            <% if gym.photo.attached? %>
+            <% if gym.photos.attached? %>
               <%= cl_image_tag gym.photo.key, height: 240, width: 360, crop: :fill %>
             <% else %>
               <img src="https://www.leisureopportunities.co.uk/images/2020/HIGH346040_712133_137408.jpg" />
             <% end %>
             <div class="card-product-infos">
               <h2><%= gym.name %></h2>
-              <p>Gym type: <%= gym.type_of_gym %></p>
-              <p>Equipment: <%= gym.equipment %></p>
-              <p>Location: <%= gym.location %></p>
+              <p><i class="fas fa-running"></i> <%= gym.type_of_gym %></p>
+              <p><i class="fas fa-dumbbell"></i> <%= gym.equipment %></p>
+              <p><i class="fas fa-compass"></i> <%= gym.location %></p>
             </div>
           </div>
           <% end %> 

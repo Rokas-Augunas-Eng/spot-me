@@ -38,11 +38,15 @@
   background: #23B8BF;
   border-radius: 15px;
   border: 2px solid black;
-  box-shadow: 2px 2px 5px grey;
+
 
   &:hover {
     background: rgba(232, 232, 232, 0.5);
     transform: scale(1.10);
     color: rgb(37, 150, 190);
   }
+}
+
+nav-link {
+  color: white;
 }

@@ -4,11 +4,11 @@ class GymsController < ApplicationController
   def index
     @gyms = Gym.all
 
-     @markers = @gyms.geocoded.map do |gym|
+    @markers = @gyms.geocoded.map do |gym|
       {
         lat: gym.latitude,
         lng: gym.longitude,
-        image_url: helpers.asset_url('gymclip')
+        image_url: helpers.asset_url('mapimage')
       }
 
     end
@@ -37,6 +37,8 @@ class GymsController < ApplicationController
   def show
     @gym = Gym.find(params[:id])
     @booking = Booking.new
+
+    @markers = [{lat: @gym.geocode[0], lng: @gym.geocode[1], image_url: helpers.asset_url('mapimage')}]
   end
 
   def edit

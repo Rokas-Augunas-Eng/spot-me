@@ -47,7 +47,7 @@
   <div class="cards">
     <% @gyms[0..3].each do |gym| %>
     <div class="card rounded" style="width: 16rem;">
-      <%= cl_image_tag gym.photos.first.key, height: 300, width: 255, crop: :fill %>
+      <%= cl_image_tag gym.photo.key, height: 300, width: 255, crop: :fill %>
       <div class="card-body">
         <h5 class="card-title"><%= link_to gym.name, gym_path(gym) %></h5>
       </div>

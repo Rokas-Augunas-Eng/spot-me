@@ -66,7 +66,7 @@
             <p><i class="fas fa-calendar-alt"></i> <%= booking.booking_start.strftime("%dth of %B at %I:%M %p") %></p>
             <p><i class="fas fa-money-bill"></i> 
             £<%= booking.gym.cost %> per session </p>
-            <%# <%= link_to "Edit", bookings_path(booking) %>
+            <%= link_to "Edit", edit_gym_booking_path(booking.gym, booking) %>
             </div>
           </div>
             <% end %>
@@ -97,7 +97,7 @@
                 <button type="button" class="btn btn-danger"><%= link_to "Remove", gym_path(gym), method: :delete, data: { confirm: "If you delete this gym a bro will lose his gains! Are you sure?" } %></button>
                 <button type="button" class="btn btn-info"><%= link_to "Edit", edit_gym_path(gym) %></button>
                 </div>
-                <% if gym.photos.attached? %>
+                <% if gym.photo.attached? %>
               <%= cl_image_tag gym.photo.key, height: 120, width: 240, crop: :fill %>
             <% else %>
               <img src="https://www.leisureopportunities.co.uk/images/2020/HIGH346040_712133_137408.jpg" />

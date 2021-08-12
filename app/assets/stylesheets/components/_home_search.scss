@@ -16,9 +16,17 @@
 }
 
 .searchbox {
-  width: 250px;
+  width: 500px;
   border-radius: 5px;
   margin-bottom: 10px;
+}
+
+.search_button {
+  border-radius: 5px;
+  color: white;
+  background: #23B8BF;
+  border-radius: 15px;
+  border: 2px solid black;
 }
 
 .near_me {

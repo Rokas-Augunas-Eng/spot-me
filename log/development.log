@@ -44109,3 +44109,1213 @@ Processing by BookingsController#edit as HTML
 Completed 200 OK in 431ms (Views: 417.5ms | ActiveRecord: 1.7ms | Allocations: 20781)
 
 
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBooking Load (5.7ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBooking Destroy (4.7ms)[0m  [1m[31mDELETE FROM "bookings" WHERE "bookings"."id" = $1[0m  [["id", 1]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGym Load (6.9ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (4.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (1.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 12]]
+  [1m[36mGym Destroy (6.2ms)[0m  [1m[31mDELETE FROM "gyms" WHERE "gyms"."id" = $1[0m  [["id", 1]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Blob Load (2.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [a5257d2f-0e10-4b03-88ad-661b2b134c14] Performing ActiveStorage::PurgeJob (Job ID: a5257d2f-0e10-4b03-88ad-661b2b134c14) from Inline(active_storage_purge) enqueued at 2021-08-12T20:04:09Z with arguments: #<GlobalID:0x000055caa81a8f10 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/12>>
+[ActiveJob] [ActiveStorage::PurgeJob] [a5257d2f-0e10-4b03-88ad-661b2b134c14]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [a5257d2f-0e10-4b03-88ad-661b2b134c14]   [1m[36mActiveStorage::Attachment Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 12], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [a5257d2f-0e10-4b03-88ad-661b2b134c14]   [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [a5257d2f-0e10-4b03-88ad-661b2b134c14]   [1m[36mActiveStorage::Blob Destroy (1.3ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 12]]
+[ActiveJob] [ActiveStorage::PurgeJob] [a5257d2f-0e10-4b03-88ad-661b2b134c14]   [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [a5257d2f-0e10-4b03-88ad-661b2b134c14] [36m  Cloudinary Storage (694.2ms) [0m[31mDeleted file from key: td5jw6foej0v7kyunsepgjuqcl7q[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [a5257d2f-0e10-4b03-88ad-661b2b134c14] Performed ActiveStorage::PurgeJob (Job ID: a5257d2f-0e10-4b03-88ad-661b2b134c14) from Inline(active_storage_purge) in 1188.79ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: a5257d2f-0e10-4b03-88ad-661b2b134c14) to Inline(active_storage_purge) with arguments: #<GlobalID:0x000055caa92a0480 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/12>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (1.0ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 13]]
+  [1m[36mGym Destroy (0.6ms)[0m  [1m[31mDELETE FROM "gyms" WHERE "gyms"."id" = $1[0m  [["id", 2]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6dd5970c-74a6-4ca0-a279-2fad7e0fcedf] Performing ActiveStorage::PurgeJob (Job ID: 6dd5970c-74a6-4ca0-a279-2fad7e0fcedf) from Inline(active_storage_purge) enqueued at 2021-08-12T20:04:11Z with arguments: #<GlobalID:0x000055caa942d0a0 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/13>>
+[ActiveJob] [ActiveStorage::PurgeJob] [6dd5970c-74a6-4ca0-a279-2fad7e0fcedf]   [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6dd5970c-74a6-4ca0-a279-2fad7e0fcedf]   [1m[36mActiveStorage::Attachment Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 13], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6dd5970c-74a6-4ca0-a279-2fad7e0fcedf]   [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6dd5970c-74a6-4ca0-a279-2fad7e0fcedf]   [1m[36mActiveStorage::Blob Destroy (0.9ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 13]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6dd5970c-74a6-4ca0-a279-2fad7e0fcedf]   [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6dd5970c-74a6-4ca0-a279-2fad7e0fcedf] [36m  Cloudinary Storage (584.2ms) [0m[31mDeleted file from key: 3pujf25vhmk9ruat9s12hpje4hsr[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6dd5970c-74a6-4ca0-a279-2fad7e0fcedf] Performed ActiveStorage::PurgeJob (Job ID: 6dd5970c-74a6-4ca0-a279-2fad7e0fcedf) from Inline(active_storage_purge) in 636.94ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 6dd5970c-74a6-4ca0-a279-2fad7e0fcedf) to Inline(active_storage_purge) with arguments: #<GlobalID:0x000055caa89a1b40 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/13>>
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 15]]
+  [1m[36mGym Destroy (0.7ms)[0m  [1m[31mDELETE FROM "gyms" WHERE "gyms"."id" = $1[0m  [["id", 5]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [618e564e-91e8-48fb-9eef-f7a9eeb9e563] Performing ActiveStorage::PurgeJob (Job ID: 618e564e-91e8-48fb-9eef-f7a9eeb9e563) from Inline(active_storage_purge) enqueued at 2021-08-12T20:04:11Z with arguments: #<GlobalID:0x000055caa8c13d60 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/15>>
+[ActiveJob] [ActiveStorage::PurgeJob] [618e564e-91e8-48fb-9eef-f7a9eeb9e563]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [618e564e-91e8-48fb-9eef-f7a9eeb9e563]   [1m[36mActiveStorage::Attachment Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 15], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [618e564e-91e8-48fb-9eef-f7a9eeb9e563]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [618e564e-91e8-48fb-9eef-f7a9eeb9e563]   [1m[36mActiveStorage::Blob Destroy (1.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 15]]
+[ActiveJob] [ActiveStorage::PurgeJob] [618e564e-91e8-48fb-9eef-f7a9eeb9e563]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [618e564e-91e8-48fb-9eef-f7a9eeb9e563] [36m  Cloudinary Storage (585.6ms) [0m[31mDeleted file from key: pcg4yusfx8v8kb3jbvx6dq67qiez[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [618e564e-91e8-48fb-9eef-f7a9eeb9e563] Performed ActiveStorage::PurgeJob (Job ID: 618e564e-91e8-48fb-9eef-f7a9eeb9e563) from Inline(active_storage_purge) in 604.79ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 618e564e-91e8-48fb-9eef-f7a9eeb9e563) to Inline(active_storage_purge) with arguments: #<GlobalID:0x000055caa8f20cb0 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/15>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.8ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 16]]
+  [1m[36mGym Destroy (0.9ms)[0m  [1m[31mDELETE FROM "gyms" WHERE "gyms"."id" = $1[0m  [["id", 6]]
+  [1m[35m (10.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [d6b56c8d-d3bd-4f7c-b3f5-ad3b94cbd3eb] Performing ActiveStorage::PurgeJob (Job ID: d6b56c8d-d3bd-4f7c-b3f5-ad3b94cbd3eb) from Inline(active_storage_purge) enqueued at 2021-08-12T20:04:12Z with arguments: #<GlobalID:0x000055caa90c28e8 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/16>>
+[ActiveJob] [ActiveStorage::PurgeJob] [d6b56c8d-d3bd-4f7c-b3f5-ad3b94cbd3eb]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [d6b56c8d-d3bd-4f7c-b3f5-ad3b94cbd3eb]   [1m[36mActiveStorage::Attachment Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 16], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [d6b56c8d-d3bd-4f7c-b3f5-ad3b94cbd3eb]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [d6b56c8d-d3bd-4f7c-b3f5-ad3b94cbd3eb]   [1m[36mActiveStorage::Blob Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 16]]
+[ActiveJob] [ActiveStorage::PurgeJob] [d6b56c8d-d3bd-4f7c-b3f5-ad3b94cbd3eb]   [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [d6b56c8d-d3bd-4f7c-b3f5-ad3b94cbd3eb] [36m  Cloudinary Storage (578.8ms) [0m[31mDeleted file from key: mrj6ac1j4hdvgfoe9cc6cheydhxy[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [d6b56c8d-d3bd-4f7c-b3f5-ad3b94cbd3eb] Performed ActiveStorage::PurgeJob (Job ID: d6b56c8d-d3bd-4f7c-b3f5-ad3b94cbd3eb) from Inline(active_storage_purge) in 595.14ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: d6b56c8d-d3bd-4f7c-b3f5-ad3b94cbd3eb) to Inline(active_storage_purge) with arguments: #<GlobalID:0x000055caa92b1708 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/16>>
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (1.0ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 17]]
+  [1m[36mGym Destroy (0.5ms)[0m  [1m[31mDELETE FROM "gyms" WHERE "gyms"."id" = $1[0m  [["id", 7]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [3d0f730a-8b24-4e42-bc1b-ea8b61a4ca32] Performing ActiveStorage::PurgeJob (Job ID: 3d0f730a-8b24-4e42-bc1b-ea8b61a4ca32) from Inline(active_storage_purge) enqueued at 2021-08-12T20:04:13Z with arguments: #<GlobalID:0x00007f66a000c748 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/17>>
+[ActiveJob] [ActiveStorage::PurgeJob] [3d0f730a-8b24-4e42-bc1b-ea8b61a4ca32]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [3d0f730a-8b24-4e42-bc1b-ea8b61a4ca32]   [1m[36mActiveStorage::Attachment Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 17], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [3d0f730a-8b24-4e42-bc1b-ea8b61a4ca32]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 17], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [3d0f730a-8b24-4e42-bc1b-ea8b61a4ca32]   [1m[36mActiveStorage::Blob Destroy (2.4ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 17]]
+[ActiveJob] [ActiveStorage::PurgeJob] [3d0f730a-8b24-4e42-bc1b-ea8b61a4ca32]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [3d0f730a-8b24-4e42-bc1b-ea8b61a4ca32] [36m  Cloudinary Storage (678.1ms) [0m[31mDeleted file from key: yhjlcib4zlm1i75k91890050tjse[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [3d0f730a-8b24-4e42-bc1b-ea8b61a4ca32] Performed ActiveStorage::PurgeJob (Job ID: 3d0f730a-8b24-4e42-bc1b-ea8b61a4ca32) from Inline(active_storage_purge) in 700.16ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 3d0f730a-8b24-4e42-bc1b-ea8b61a4ca32) to Inline(active_storage_purge) with arguments: #<GlobalID:0x000055caa8e34928 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/17>>
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 18]]
+  [1m[36mGym Destroy (0.9ms)[0m  [1m[31mDELETE FROM "gyms" WHERE "gyms"."id" = $1[0m  [["id", 8]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2f2ee608-8b99-4470-a6d4-cbcc42e948c8] Performing ActiveStorage::PurgeJob (Job ID: 2f2ee608-8b99-4470-a6d4-cbcc42e948c8) from Inline(active_storage_purge) enqueued at 2021-08-12T20:04:13Z with arguments: #<GlobalID:0x000055caa87f2b50 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/18>>
+[ActiveJob] [ActiveStorage::PurgeJob] [2f2ee608-8b99-4470-a6d4-cbcc42e948c8]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2f2ee608-8b99-4470-a6d4-cbcc42e948c8]   [1m[36mActiveStorage::Attachment Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 18], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2f2ee608-8b99-4470-a6d4-cbcc42e948c8]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2f2ee608-8b99-4470-a6d4-cbcc42e948c8]   [1m[36mActiveStorage::Blob Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 18]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2f2ee608-8b99-4470-a6d4-cbcc42e948c8]   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2f2ee608-8b99-4470-a6d4-cbcc42e948c8] [36m  Cloudinary Storage (807.4ms) [0m[31mDeleted file from key: 6xqnwy7gf1nby52aynysb6kewyu8[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2f2ee608-8b99-4470-a6d4-cbcc42e948c8] Performed ActiveStorage::PurgeJob (Job ID: 2f2ee608-8b99-4470-a6d4-cbcc42e948c8) from Inline(active_storage_purge) in 825.41ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 2f2ee608-8b99-4470-a6d4-cbcc42e948c8) to Inline(active_storage_purge) with arguments: #<GlobalID:0x000055caa9164cb0 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/18>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 19]]
+  [1m[36mGym Destroy (0.5ms)[0m  [1m[31mDELETE FROM "gyms" WHERE "gyms"."id" = $1[0m  [["id", 9]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2d8cd9f0-2e38-4f5b-9660-8a107970662c] Performing ActiveStorage::PurgeJob (Job ID: 2d8cd9f0-2e38-4f5b-9660-8a107970662c) from Inline(active_storage_purge) enqueued at 2021-08-12T20:04:14Z with arguments: #<GlobalID:0x000055caa860b170 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/19>>
+[ActiveJob] [ActiveStorage::PurgeJob] [2d8cd9f0-2e38-4f5b-9660-8a107970662c]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2d8cd9f0-2e38-4f5b-9660-8a107970662c]   [1m[36mActiveStorage::Attachment Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 19], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2d8cd9f0-2e38-4f5b-9660-8a107970662c]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2d8cd9f0-2e38-4f5b-9660-8a107970662c]   [1m[36mActiveStorage::Blob Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 19]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2d8cd9f0-2e38-4f5b-9660-8a107970662c]   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2d8cd9f0-2e38-4f5b-9660-8a107970662c] [36m  Cloudinary Storage (600.4ms) [0m[31mDeleted file from key: tyyy1rqmgwtn0ldtnvn1anzk21lr[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2d8cd9f0-2e38-4f5b-9660-8a107970662c] Performed ActiveStorage::PurgeJob (Job ID: 2d8cd9f0-2e38-4f5b-9660-8a107970662c) from Inline(active_storage_purge) in 620.71ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 2d8cd9f0-2e38-4f5b-9660-8a107970662c) to Inline(active_storage_purge) with arguments: #<GlobalID:0x000055caa9631c20 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/19>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (11.0ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 20]]
+  [1m[36mGym Destroy (0.6ms)[0m  [1m[31mDELETE FROM "gyms" WHERE "gyms"."id" = $1[0m  [["id", 10]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ab2dfd77-3c5e-4b5c-9f8c-fe929977adec] Performing ActiveStorage::PurgeJob (Job ID: ab2dfd77-3c5e-4b5c-9f8c-fe929977adec) from Inline(active_storage_purge) enqueued at 2021-08-12T20:04:15Z with arguments: #<GlobalID:0x000055caa970fe08 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/20>>
+[ActiveJob] [ActiveStorage::PurgeJob] [ab2dfd77-3c5e-4b5c-9f8c-fe929977adec]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ab2dfd77-3c5e-4b5c-9f8c-fe929977adec]   [1m[36mActiveStorage::Attachment Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 20], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ab2dfd77-3c5e-4b5c-9f8c-fe929977adec]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ab2dfd77-3c5e-4b5c-9f8c-fe929977adec]   [1m[36mActiveStorage::Blob Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 20]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ab2dfd77-3c5e-4b5c-9f8c-fe929977adec]   [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ab2dfd77-3c5e-4b5c-9f8c-fe929977adec] [36m  Cloudinary Storage (604.8ms) [0m[31mDeleted file from key: dzwyt3j4w0b7uvzhk547fh07nllz[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ab2dfd77-3c5e-4b5c-9f8c-fe929977adec] Performed ActiveStorage::PurgeJob (Job ID: ab2dfd77-3c5e-4b5c-9f8c-fe929977adec) from Inline(active_storage_purge) in 624.91ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: ab2dfd77-3c5e-4b5c-9f8c-fe929977adec) to Inline(active_storage_purge) with arguments: #<GlobalID:0x000055caa9846948 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/20>>
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (2.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (1.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (6.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jocelyn_bailey@walsh.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "jocelyn_bailey@walsh.org"], ["encrypted_password", "$2a$12$zxwNG0uVgN.fzIsY18oqLuY70MoVJ.tL.5B28pQfPz8byhah2NhUC"], ["created_at", "2021-08-12 20:04:16.397160"], ["updated_at", "2021-08-12 20:04:16.397160"], ["first_name", "Eliseo"], ["last_name", "Muller"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBooking Load (5.0ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  [1m[36mGym Load (1.1ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms"[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (4.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kiesha@windler.info"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "kiesha@windler.info"], ["encrypted_password", "$2a$12$NOtdotQCpcUJZWrRWcrHV.rTZBkuwdr7gf5GlXUXgYZO/hS7dTn8m"], ["created_at", "2021-08-12 20:12:50.830371"], ["updated_at", "2021-08-12 20:12:50.830371"], ["first_name", "Rosendo"], ["last_name", "King"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (4.6ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["equipment", "free weights"], ["location", "334 Walworth Rd, London"], ["type_of_gym", "Weights"], ["cost", 10], ["name", "Lifting gym for the Bros"], ["user_id", 4], ["created_at", "2021-08-12 20:12:52.298838"], ["updated_at", "2021-08-12 20:12:52.298838"], ["latitude", 51.4895752], ["longitude", -0.0965064]]
+  [1m[36mActiveStorage::Blob Load (3.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (2.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "7qi20f95n4bpj6llh7m1lynpzyhd"], ["filename", "gym.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 77479], ["checksum", "0KT7TW5PeXGnmN4gLPzagA=="], ["created_at", "2021-08-12 20:12:52.361850"]]
+  [1m[36mActiveStorage::Attachment Create (1.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 12], ["blob_id", 21], ["created_at", "2021-08-12 20:12:52.369703"]]
+  [1m[36mGym Update (1.2ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:12:52.375329"], ["id", 12]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+[36m  Cloudinary Storage (1886.0ms) [0m[32mUploaded file to key: 7qi20f95n4bpj6llh7m1lynpzyhd (checksum: 0KT7TW5PeXGnmN4gLPzagA==)[0m
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c769a028-7989-45fc-a6f0-c4676e4960cc] Performing ActiveStorage::AnalyzeJob (Job ID: c769a028-7989-45fc-a6f0-c4676e4960cc) from Inline(active_storage_analysis) enqueued at 2021-08-12T20:12:54Z with arguments: #<GlobalID:0x00005585367311b0 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/21>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c769a028-7989-45fc-a6f0-c4676e4960cc] [36m  Cloudinary Storage (781.5ms) [0m[34mDownloaded file from key: 7qi20f95n4bpj6llh7m1lynpzyhd[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c769a028-7989-45fc-a6f0-c4676e4960cc] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c769a028-7989-45fc-a6f0-c4676e4960cc]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c769a028-7989-45fc-a6f0-c4676e4960cc]   [1m[36mActiveStorage::Blob Update (1.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 21]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c769a028-7989-45fc-a6f0-c4676e4960cc]   [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c769a028-7989-45fc-a6f0-c4676e4960cc] Performed ActiveStorage::AnalyzeJob (Job ID: c769a028-7989-45fc-a6f0-c4676e4960cc) from Inline(active_storage_analysis) in 821.4ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: c769a028-7989-45fc-a6f0-c4676e4960cc) to Inline(active_storage_analysis) with arguments: #<GlobalID:0x0000558536819e10 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/21>>
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (1.1ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["equipment", "treadmill, yoga mats"], ["location", "208-210 Old Kent Rd, London"], ["type_of_gym", "Cardio"], ["cost", 24], ["name", "Running from trouble"], ["user_id", 4], ["created_at", "2021-08-12 20:12:57.089038"], ["updated_at", "2021-08-12 20:12:57.089038"], ["latitude", 51.4887025], ["longitude", -0.0776619]]
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "1id3sa14zqo0gz1b1m8a56ak1ap4"], ["filename", "gym.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 130893], ["checksum", "DF4VIaBFM2oBEEGS7bSvWg=="], ["created_at", "2021-08-12 20:12:57.114109"]]
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 13], ["blob_id", 22], ["created_at", "2021-08-12 20:12:57.119850"]]
+  [1m[36mGym Update (0.6ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:12:57.123808"], ["id", 13]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+[36m  Cloudinary Storage (1654.5ms) [0m[32mUploaded file to key: 1id3sa14zqo0gz1b1m8a56ak1ap4 (checksum: DF4VIaBFM2oBEEGS7bSvWg==)[0m
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b82ac734-bd51-4506-a0b2-d94cd5b3bf6b] Performing ActiveStorage::AnalyzeJob (Job ID: b82ac734-bd51-4506-a0b2-d94cd5b3bf6b) from Inline(active_storage_analysis) enqueued at 2021-08-12T20:12:58Z with arguments: #<GlobalID:0x0000558536badab8 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/22>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b82ac734-bd51-4506-a0b2-d94cd5b3bf6b] [36m  Cloudinary Storage (590.7ms) [0m[34mDownloaded file from key: 1id3sa14zqo0gz1b1m8a56ak1ap4[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b82ac734-bd51-4506-a0b2-d94cd5b3bf6b] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b82ac734-bd51-4506-a0b2-d94cd5b3bf6b]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b82ac734-bd51-4506-a0b2-d94cd5b3bf6b]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 22]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b82ac734-bd51-4506-a0b2-d94cd5b3bf6b]   [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b82ac734-bd51-4506-a0b2-d94cd5b3bf6b] Performed ActiveStorage::AnalyzeJob (Job ID: b82ac734-bd51-4506-a0b2-d94cd5b3bf6b) from Inline(active_storage_analysis) in 626.89ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: b82ac734-bd51-4506-a0b2-d94cd5b3bf6b) to Inline(active_storage_analysis) with arguments: #<GlobalID:0x0000558536dd8360 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/22>>
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (1.1ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["equipment", "kettles, medicine balls, bands"], ["location", "1 Pocock St, London"], ["type_of_gym", "Weights"], ["cost", 13], ["name", "Crossfit paradise"], ["user_id", 4], ["created_at", "2021-08-12 20:13:00.568903"], ["updated_at", "2021-08-12 20:13:00.568903"], ["latitude", 51.5024846], ["longitude", -0.09998250278257137]]
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "ih6g6ucqsirikfio5xn6mn6p5pv6"], ["filename", "gym.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 41106], ["checksum", "xijviDWX8CTj39YlFuaPGg=="], ["created_at", "2021-08-12 20:13:00.592060"]]
+  [1m[36mActiveStorage::Attachment Create (1.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 14], ["blob_id", 23], ["created_at", "2021-08-12 20:13:00.597317"]]
+  [1m[36mGym Update (0.6ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:13:00.604392"], ["id", 14]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+[36m  Cloudinary Storage (1738.9ms) [0m[32mUploaded file to key: ih6g6ucqsirikfio5xn6mn6p5pv6 (checksum: xijviDWX8CTj39YlFuaPGg==)[0m
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6a9577c2-116a-49c7-94c3-2e24954053b1] Performing ActiveStorage::AnalyzeJob (Job ID: 6a9577c2-116a-49c7-94c3-2e24954053b1) from Inline(active_storage_analysis) enqueued at 2021-08-12T20:13:02Z with arguments: #<GlobalID:0x0000558536fea8b0 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/23>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6a9577c2-116a-49c7-94c3-2e24954053b1] [36m  Cloudinary Storage (996.2ms) [0m[34mDownloaded file from key: ih6g6ucqsirikfio5xn6mn6p5pv6[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6a9577c2-116a-49c7-94c3-2e24954053b1] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6a9577c2-116a-49c7-94c3-2e24954053b1]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6a9577c2-116a-49c7-94c3-2e24954053b1]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 23]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6a9577c2-116a-49c7-94c3-2e24954053b1]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6a9577c2-116a-49c7-94c3-2e24954053b1] Performed ActiveStorage::AnalyzeJob (Job ID: 6a9577c2-116a-49c7-94c3-2e24954053b1) from Inline(active_storage_analysis) in 1021.74ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 6a9577c2-116a-49c7-94c3-2e24954053b1) to Inline(active_storage_analysis) with arguments: #<GlobalID:0x00005585370dc7c8 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/23>>
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (0.6ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["equipment", "bench, squat rack"], ["location", "66 Gedling Pl, London"], ["type_of_gym", "Weights"], ["cost", 9], ["name", "Metal house gym"], ["user_id", 4], ["created_at", "2021-08-12 20:13:05.569712"], ["updated_at", "2021-08-12 20:13:05.569712"], ["latitude", 51.4982624], ["longitude", -0.0738571]]
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "sapbjrggs5z0iq42ov7osc0fexg3"], ["filename", "gym.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 219615], ["checksum", "7UtjPQXAaXNMv6e94VRfwg=="], ["created_at", "2021-08-12 20:13:05.601938"]]
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 15], ["blob_id", 24], ["created_at", "2021-08-12 20:13:05.606547"]]
+  [1m[36mGym Update (0.7ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:13:05.610035"], ["id", 15]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[36m  Cloudinary Storage (2651.5ms) [0m[32mUploaded file to key: sapbjrggs5z0iq42ov7osc0fexg3 (checksum: 7UtjPQXAaXNMv6e94VRfwg==)[0m
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [17083a0e-7a60-459f-b090-c6b1ba41431e] Performing ActiveStorage::AnalyzeJob (Job ID: 17083a0e-7a60-459f-b090-c6b1ba41431e) from Inline(active_storage_analysis) enqueued at 2021-08-12T20:13:08Z with arguments: #<GlobalID:0x0000558537351648 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/24>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [17083a0e-7a60-459f-b090-c6b1ba41431e] [36m  Cloudinary Storage (1518.6ms) [0m[34mDownloaded file from key: sapbjrggs5z0iq42ov7osc0fexg3[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [17083a0e-7a60-459f-b090-c6b1ba41431e] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [17083a0e-7a60-459f-b090-c6b1ba41431e]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [17083a0e-7a60-459f-b090-c6b1ba41431e]   [1m[36mActiveStorage::Blob Update (0.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 24]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [17083a0e-7a60-459f-b090-c6b1ba41431e]   [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [17083a0e-7a60-459f-b090-c6b1ba41431e] Performed ActiveStorage::AnalyzeJob (Job ID: 17083a0e-7a60-459f-b090-c6b1ba41431e) from Inline(active_storage_analysis) in 1552.75ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 17083a0e-7a60-459f-b090-c6b1ba41431e) to Inline(active_storage_analysis) with arguments: #<GlobalID:0x000055853746eda0 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/24>>
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (0.9ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["equipment", "tyres, hammers, yoke rack"], ["location", "38 New Kent Rd, Elephant and Castle, London"], ["type_of_gym", "Yoga Studio"], ["cost", 16], ["name", "The home gym for the big people"], ["user_id", 4], ["created_at", "2021-08-12 20:13:13.471496"], ["updated_at", "2021-08-12 20:13:13.471496"], ["latitude", 51.4948534], ["longitude", -0.0978893]]
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (1.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "mz15lh74zk1jcr8lyw6f8cs1y2zk"], ["filename", "gym.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 229073], ["checksum", "TgKjxFdvKLreXa8RTBRLtg=="], ["created_at", "2021-08-12 20:13:13.497530"]]
+  [1m[36mActiveStorage::Attachment Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 16], ["blob_id", 25], ["created_at", "2021-08-12 20:13:13.504336"]]
+  [1m[36mGym Update (1.0ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:13:13.509065"], ["id", 16]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+[36m  Cloudinary Storage (3070.8ms) [0m[32mUploaded file to key: mz15lh74zk1jcr8lyw6f8cs1y2zk (checksum: TgKjxFdvKLreXa8RTBRLtg==)[0m
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [77caf707-7e91-4a7b-90fa-669ce2cf3de8] Performing ActiveStorage::AnalyzeJob (Job ID: 77caf707-7e91-4a7b-90fa-669ce2cf3de8) from Inline(active_storage_analysis) enqueued at 2021-08-12T20:13:16Z with arguments: #<GlobalID:0x00005585376ec140 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/25>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [77caf707-7e91-4a7b-90fa-669ce2cf3de8] [36m  Cloudinary Storage (1274.2ms) [0m[34mDownloaded file from key: mz15lh74zk1jcr8lyw6f8cs1y2zk[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [77caf707-7e91-4a7b-90fa-669ce2cf3de8] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [77caf707-7e91-4a7b-90fa-669ce2cf3de8]   [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [77caf707-7e91-4a7b-90fa-669ce2cf3de8]   [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 25]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [77caf707-7e91-4a7b-90fa-669ce2cf3de8]   [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [77caf707-7e91-4a7b-90fa-669ce2cf3de8] Performed ActiveStorage::AnalyzeJob (Job ID: 77caf707-7e91-4a7b-90fa-669ce2cf3de8) from Inline(active_storage_analysis) in 1317.37ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 77caf707-7e91-4a7b-90fa-669ce2cf3de8) to Inline(active_storage_analysis) with arguments: #<GlobalID:0x000055853787e120 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/25>>
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (0.7ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["equipment", "yoga mats"], ["location", "8 Farrell Court, Elephant Rd, London"], ["type_of_gym", "Yoga Studio"], ["cost", 19], ["name", "The house of peace"], ["user_id", 4], ["created_at", "2021-08-12 20:13:19.617113"], ["updated_at", "2021-08-12 20:13:19.617113"]]
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 17], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 17], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "tolgaagd4plulp3yp9a0rhvyux2p"], ["filename", "gym.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 142265], ["checksum", "W5TSQTIbc/mwif7PTsGWMw=="], ["created_at", "2021-08-12 20:13:19.649278"]]
+  [1m[36mActiveStorage::Attachment Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 17], ["blob_id", 26], ["created_at", "2021-08-12 20:13:19.661222"]]
+  [1m[36mGym Update (1.1ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:13:19.667812"], ["id", 17]]
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+[36m  Cloudinary Storage (2073.3ms) [0m[32mUploaded file to key: tolgaagd4plulp3yp9a0rhvyux2p (checksum: W5TSQTIbc/mwif7PTsGWMw==)[0m
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [beebbd0c-58cf-4c93-87fd-992bc229805e] Performing ActiveStorage::AnalyzeJob (Job ID: beebbd0c-58cf-4c93-87fd-992bc229805e) from Inline(active_storage_analysis) enqueued at 2021-08-12T20:13:21Z with arguments: #<GlobalID:0x0000558537abf4e8 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/26>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [beebbd0c-58cf-4c93-87fd-992bc229805e] [36m  Cloudinary Storage (1105.7ms) [0m[34mDownloaded file from key: tolgaagd4plulp3yp9a0rhvyux2p[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [beebbd0c-58cf-4c93-87fd-992bc229805e] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [beebbd0c-58cf-4c93-87fd-992bc229805e]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [beebbd0c-58cf-4c93-87fd-992bc229805e]   [1m[36mActiveStorage::Blob Update (1.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 26]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [beebbd0c-58cf-4c93-87fd-992bc229805e]   [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [beebbd0c-58cf-4c93-87fd-992bc229805e] Performed ActiveStorage::AnalyzeJob (Job ID: beebbd0c-58cf-4c93-87fd-992bc229805e) from Inline(active_storage_analysis) in 1143.3ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: beebbd0c-58cf-4c93-87fd-992bc229805e) to Inline(active_storage_analysis) with arguments: #<GlobalID:0x0000558537bb1090 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/26>>
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBooking Load (0.8ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  [1m[36mGym Load (0.8ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 17], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 26]]
+  [1m[36mGym Destroy (1.5ms)[0m  [1m[31mDELETE FROM "gyms" WHERE "gyms"."id" = $1[0m  [["id", 17]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [f4b9e653-4f60-4115-8d50-35ba12ec262d] Performing ActiveStorage::PurgeJob (Job ID: f4b9e653-4f60-4115-8d50-35ba12ec262d) from Inline(active_storage_purge) enqueued at 2021-08-12T20:14:53Z with arguments: #<GlobalID:0x00005614ef053728 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/26>>
+[ActiveJob] [ActiveStorage::PurgeJob] [f4b9e653-4f60-4115-8d50-35ba12ec262d]   [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [f4b9e653-4f60-4115-8d50-35ba12ec262d]   [1m[36mActiveStorage::Attachment Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 26], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [f4b9e653-4f60-4115-8d50-35ba12ec262d]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 26], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [f4b9e653-4f60-4115-8d50-35ba12ec262d]   [1m[36mActiveStorage::Blob Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 26]]
+[ActiveJob] [ActiveStorage::PurgeJob] [f4b9e653-4f60-4115-8d50-35ba12ec262d]   [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [f4b9e653-4f60-4115-8d50-35ba12ec262d] [36m  Cloudinary Storage (1350.9ms) [0m[31mDeleted file from key: tolgaagd4plulp3yp9a0rhvyux2p[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [f4b9e653-4f60-4115-8d50-35ba12ec262d] Performed ActiveStorage::PurgeJob (Job ID: f4b9e653-4f60-4115-8d50-35ba12ec262d) from Inline(active_storage_purge) in 1686.49ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: f4b9e653-4f60-4115-8d50-35ba12ec262d) to Inline(active_storage_purge) with arguments: #<GlobalID:0x00005614f0f5c4d0 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/26>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 21]]
+  [1m[36mGym Destroy (0.5ms)[0m  [1m[31mDELETE FROM "gyms" WHERE "gyms"."id" = $1[0m  [["id", 12]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [adcaa455-a9ca-43bb-bb3f-90be238d1005] Performing ActiveStorage::PurgeJob (Job ID: adcaa455-a9ca-43bb-bb3f-90be238d1005) from Inline(active_storage_purge) enqueued at 2021-08-12T20:14:55Z with arguments: #<GlobalID:0x00005614f1132f48 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/21>>
+[ActiveJob] [ActiveStorage::PurgeJob] [adcaa455-a9ca-43bb-bb3f-90be238d1005]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [adcaa455-a9ca-43bb-bb3f-90be238d1005]   [1m[36mActiveStorage::Attachment Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 21], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [adcaa455-a9ca-43bb-bb3f-90be238d1005]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [adcaa455-a9ca-43bb-bb3f-90be238d1005]   [1m[36mActiveStorage::Blob Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 21]]
+[ActiveJob] [ActiveStorage::PurgeJob] [adcaa455-a9ca-43bb-bb3f-90be238d1005]   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [adcaa455-a9ca-43bb-bb3f-90be238d1005] [36m  Cloudinary Storage (552.2ms) [0m[31mDeleted file from key: 7qi20f95n4bpj6llh7m1lynpzyhd[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [adcaa455-a9ca-43bb-bb3f-90be238d1005] Performed ActiveStorage::PurgeJob (Job ID: adcaa455-a9ca-43bb-bb3f-90be238d1005) from Inline(active_storage_purge) in 601.23ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: adcaa455-a9ca-43bb-bb3f-90be238d1005) to Inline(active_storage_purge) with arguments: #<GlobalID:0x00005614f05ac048 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/21>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 22]]
+  [1m[36mGym Destroy (0.6ms)[0m  [1m[31mDELETE FROM "gyms" WHERE "gyms"."id" = $1[0m  [["id", 13]]
+  [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [4957ec16-a91b-4a3e-a921-f09349b05f1a] Performing ActiveStorage::PurgeJob (Job ID: 4957ec16-a91b-4a3e-a921-f09349b05f1a) from Inline(active_storage_purge) enqueued at 2021-08-12T20:14:56Z with arguments: #<GlobalID:0x00005614f0814bc8 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/22>>
+[ActiveJob] [ActiveStorage::PurgeJob] [4957ec16-a91b-4a3e-a921-f09349b05f1a]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [4957ec16-a91b-4a3e-a921-f09349b05f1a]   [1m[36mActiveStorage::Attachment Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 22], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [4957ec16-a91b-4a3e-a921-f09349b05f1a]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 22], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [4957ec16-a91b-4a3e-a921-f09349b05f1a]   [1m[36mActiveStorage::Blob Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 22]]
+[ActiveJob] [ActiveStorage::PurgeJob] [4957ec16-a91b-4a3e-a921-f09349b05f1a]   [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [4957ec16-a91b-4a3e-a921-f09349b05f1a] [36m  Cloudinary Storage (529.3ms) [0m[31mDeleted file from key: 1id3sa14zqo0gz1b1m8a56ak1ap4[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [4957ec16-a91b-4a3e-a921-f09349b05f1a] Performed ActiveStorage::PurgeJob (Job ID: 4957ec16-a91b-4a3e-a921-f09349b05f1a) from Inline(active_storage_purge) in 550.26ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 4957ec16-a91b-4a3e-a921-f09349b05f1a) to Inline(active_storage_purge) with arguments: #<GlobalID:0x00005614f0ba47c0 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/22>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 23]]
+  [1m[36mGym Destroy (0.7ms)[0m  [1m[31mDELETE FROM "gyms" WHERE "gyms"."id" = $1[0m  [["id", 14]]
+  [1m[35m (10.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [105e9962-d9bd-4e73-b6c6-727200243db8] Performing ActiveStorage::PurgeJob (Job ID: 105e9962-d9bd-4e73-b6c6-727200243db8) from Inline(active_storage_purge) enqueued at 2021-08-12T20:14:56Z with arguments: #<GlobalID:0x00005614f0d53288 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/23>>
+[ActiveJob] [ActiveStorage::PurgeJob] [105e9962-d9bd-4e73-b6c6-727200243db8]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [105e9962-d9bd-4e73-b6c6-727200243db8]   [1m[36mActiveStorage::Attachment Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 23], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [105e9962-d9bd-4e73-b6c6-727200243db8]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 23], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [105e9962-d9bd-4e73-b6c6-727200243db8]   [1m[36mActiveStorage::Blob Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 23]]
+[ActiveJob] [ActiveStorage::PurgeJob] [105e9962-d9bd-4e73-b6c6-727200243db8]   [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [105e9962-d9bd-4e73-b6c6-727200243db8] [36m  Cloudinary Storage (748.4ms) [0m[31mDeleted file from key: ih6g6ucqsirikfio5xn6mn6p5pv6[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [105e9962-d9bd-4e73-b6c6-727200243db8] Performed ActiveStorage::PurgeJob (Job ID: 105e9962-d9bd-4e73-b6c6-727200243db8) from Inline(active_storage_purge) in 770.02ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 105e9962-d9bd-4e73-b6c6-727200243db8) to Inline(active_storage_purge) with arguments: #<GlobalID:0x00005614f0f65ad0 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/23>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 24]]
+  [1m[36mGym Destroy (0.6ms)[0m  [1m[31mDELETE FROM "gyms" WHERE "gyms"."id" = $1[0m  [["id", 15]]
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [65fb738b-54ca-4dcf-a4a0-573062aabb1c] Performing ActiveStorage::PurgeJob (Job ID: 65fb738b-54ca-4dcf-a4a0-573062aabb1c) from Inline(active_storage_purge) enqueued at 2021-08-12T20:14:57Z with arguments: #<GlobalID:0x00005614f0fe8e08 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/24>>
+[ActiveJob] [ActiveStorage::PurgeJob] [65fb738b-54ca-4dcf-a4a0-573062aabb1c]   [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [65fb738b-54ca-4dcf-a4a0-573062aabb1c]   [1m[36mActiveStorage::Attachment Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 24], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [65fb738b-54ca-4dcf-a4a0-573062aabb1c]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 24], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [65fb738b-54ca-4dcf-a4a0-573062aabb1c]   [1m[36mActiveStorage::Blob Destroy (1.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 24]]
+[ActiveJob] [ActiveStorage::PurgeJob] [65fb738b-54ca-4dcf-a4a0-573062aabb1c]   [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [65fb738b-54ca-4dcf-a4a0-573062aabb1c] [36m  Cloudinary Storage (821.3ms) [0m[31mDeleted file from key: sapbjrggs5z0iq42ov7osc0fexg3[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [65fb738b-54ca-4dcf-a4a0-573062aabb1c] Performed ActiveStorage::PurgeJob (Job ID: 65fb738b-54ca-4dcf-a4a0-573062aabb1c) from Inline(active_storage_purge) in 848.1ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 65fb738b-54ca-4dcf-a4a0-573062aabb1c) to Inline(active_storage_purge) with arguments: #<GlobalID:0x00005614f1174cb8 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/24>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 25]]
+  [1m[36mGym Destroy (0.5ms)[0m  [1m[31mDELETE FROM "gyms" WHERE "gyms"."id" = $1[0m  [["id", 16]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6860e357-0496-4331-8a8e-bd4ab367c95b] Performing ActiveStorage::PurgeJob (Job ID: 6860e357-0496-4331-8a8e-bd4ab367c95b) from Inline(active_storage_purge) enqueued at 2021-08-12T20:14:58Z with arguments: #<GlobalID:0x00005614f0c76ef0 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/25>>
+[ActiveJob] [ActiveStorage::PurgeJob] [6860e357-0496-4331-8a8e-bd4ab367c95b]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6860e357-0496-4331-8a8e-bd4ab367c95b]   [1m[36mActiveStorage::Attachment Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 25], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6860e357-0496-4331-8a8e-bd4ab367c95b]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 25], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6860e357-0496-4331-8a8e-bd4ab367c95b]   [1m[36mActiveStorage::Blob Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 25]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6860e357-0496-4331-8a8e-bd4ab367c95b]   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6860e357-0496-4331-8a8e-bd4ab367c95b] [36m  Cloudinary Storage (1118.7ms) [0m[31mDeleted file from key: mz15lh74zk1jcr8lyw6f8cs1y2zk[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6860e357-0496-4331-8a8e-bd4ab367c95b] Performed ActiveStorage::PurgeJob (Job ID: 6860e357-0496-4331-8a8e-bd4ab367c95b) from Inline(active_storage_purge) in 1140.9ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 6860e357-0496-4331-8a8e-bd4ab367c95b) to Inline(active_storage_purge) with arguments: #<GlobalID:0x00005614f0971a70 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/25>>
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (1.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demarcus@dubuque-nolan.name"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "demarcus@dubuque-nolan.name"], ["encrypted_password", "$2a$12$popOE/8gRQBL2NBMEJ93pO4CYvdFRiIMDe9FyKK3HLpWCcMdApEvW"], ["created_at", "2021-08-12 20:15:00.042847"], ["updated_at", "2021-08-12 20:15:00.042847"], ["first_name", "Susanne"], ["last_name", "Weissnat"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (0.9ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["equipment", "free weights"], ["location", "334 Walworth Rd, London"], ["type_of_gym", "Weights"], ["cost", 10], ["name", "Lifting gym for the Bros"], ["user_id", 5], ["created_at", "2021-08-12 20:15:00.248834"], ["updated_at", "2021-08-12 20:15:00.248834"], ["latitude", 51.4895752], ["longitude", -0.0965064]]
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "7buwf258z19wwnn3f2tx18crm098"], ["filename", "gym.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 77479], ["checksum", "0KT7TW5PeXGnmN4gLPzagA=="], ["created_at", "2021-08-12 20:15:00.288202"]]
+  [1m[36mActiveStorage::Attachment Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 18], ["blob_id", 27], ["created_at", "2021-08-12 20:15:00.293711"]]
+  [1m[36mGym Update (0.8ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:15:00.302067"], ["id", 18]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+[36m  Cloudinary Storage (832.2ms) [0m[32mUploaded file to key: 7buwf258z19wwnn3f2tx18crm098 (checksum: 0KT7TW5PeXGnmN4gLPzagA==)[0m
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cb849fa-73f1-44a7-bb8c-9bc9fc34cdde] Performing ActiveStorage::AnalyzeJob (Job ID: 1cb849fa-73f1-44a7-bb8c-9bc9fc34cdde) from Inline(active_storage_analysis) enqueued at 2021-08-12T20:15:01Z with arguments: #<GlobalID:0x00005614f15e3628 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/27>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cb849fa-73f1-44a7-bb8c-9bc9fc34cdde] [36m  Cloudinary Storage (324.5ms) [0m[34mDownloaded file from key: 7buwf258z19wwnn3f2tx18crm098[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cb849fa-73f1-44a7-bb8c-9bc9fc34cdde] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cb849fa-73f1-44a7-bb8c-9bc9fc34cdde]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cb849fa-73f1-44a7-bb8c-9bc9fc34cdde]   [1m[36mActiveStorage::Blob Update (0.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 27]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cb849fa-73f1-44a7-bb8c-9bc9fc34cdde]   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cb849fa-73f1-44a7-bb8c-9bc9fc34cdde] Performed ActiveStorage::AnalyzeJob (Job ID: 1cb849fa-73f1-44a7-bb8c-9bc9fc34cdde) from Inline(active_storage_analysis) in 344.27ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 1cb849fa-73f1-44a7-bb8c-9bc9fc34cdde) to Inline(active_storage_analysis) with arguments: #<GlobalID:0x00005614f16c8c28 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/27>>
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (0.7ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["equipment", "treadmill, yoga mats"], ["location", "208-210 Old Kent Rd, London"], ["type_of_gym", "Cardio"], ["cost", 24], ["name", "Running from trouble"], ["user_id", 5], ["created_at", "2021-08-12 20:15:02.248431"], ["updated_at", "2021-08-12 20:15:02.248431"], ["latitude", 51.4887025], ["longitude", -0.0776619]]
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "dxts0xmvftzhi5da93i9pjbvh7x1"], ["filename", "gym.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 130893], ["checksum", "DF4VIaBFM2oBEEGS7bSvWg=="], ["created_at", "2021-08-12 20:15:02.267069"]]
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 19], ["blob_id", 28], ["created_at", "2021-08-12 20:15:02.270654"]]
+  [1m[36mGym Update (0.6ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:15:02.273852"], ["id", 19]]
+  [1m[35m (10.8ms)[0m  [1m[35mCOMMIT[0m
+[36m  Cloudinary Storage (1349.1ms) [0m[32mUploaded file to key: dxts0xmvftzhi5da93i9pjbvh7x1 (checksum: DF4VIaBFM2oBEEGS7bSvWg==)[0m
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2d84eb97-a906-4cde-9fa3-445509fda880] Performing ActiveStorage::AnalyzeJob (Job ID: 2d84eb97-a906-4cde-9fa3-445509fda880) from Inline(active_storage_analysis) enqueued at 2021-08-12T20:15:03Z with arguments: #<GlobalID:0x00005614f19234c8 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/28>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2d84eb97-a906-4cde-9fa3-445509fda880] [36m  Cloudinary Storage (870.1ms) [0m[34mDownloaded file from key: dxts0xmvftzhi5da93i9pjbvh7x1[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2d84eb97-a906-4cde-9fa3-445509fda880] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2d84eb97-a906-4cde-9fa3-445509fda880]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2d84eb97-a906-4cde-9fa3-445509fda880]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 28]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2d84eb97-a906-4cde-9fa3-445509fda880]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2d84eb97-a906-4cde-9fa3-445509fda880] Performed ActiveStorage::AnalyzeJob (Job ID: 2d84eb97-a906-4cde-9fa3-445509fda880) from Inline(active_storage_analysis) in 910.08ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 2d84eb97-a906-4cde-9fa3-445509fda880) to Inline(active_storage_analysis) with arguments: #<GlobalID:0x00005614f1a18f18 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/28>>
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (1.0ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["equipment", "kettles, medicine balls, bands"], ["location", "1 Pocock St, London"], ["type_of_gym", "Weights"], ["cost", 13], ["name", "Crossfit paradise"], ["user_id", 5], ["created_at", "2021-08-12 20:15:04.842863"], ["updated_at", "2021-08-12 20:15:04.842863"], ["latitude", 51.5024846], ["longitude", -0.09998250278257137]]
+  [1m[36mActiveStorage::Blob Load (2.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (1.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "24xbze0di6tkiyqcs7wiglr8z11w"], ["filename", "gym.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 41106], ["checksum", "xijviDWX8CTj39YlFuaPGg=="], ["created_at", "2021-08-12 20:15:04.871813"]]
+  [1m[36mActiveStorage::Attachment Create (3.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 20], ["blob_id", 29], ["created_at", "2021-08-12 20:15:04.884367"]]
+  [1m[36mGym Update (1.8ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:15:04.897907"], ["id", 20]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+[36m  Cloudinary Storage (956.8ms) [0m[32mUploaded file to key: 24xbze0di6tkiyqcs7wiglr8z11w (checksum: xijviDWX8CTj39YlFuaPGg==)[0m
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e2873636-1f0f-4b32-9832-72925f5d5f51] Performing ActiveStorage::AnalyzeJob (Job ID: e2873636-1f0f-4b32-9832-72925f5d5f51) from Inline(active_storage_analysis) enqueued at 2021-08-12T20:15:05Z with arguments: #<GlobalID:0x00005614f1c2b260 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/29>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e2873636-1f0f-4b32-9832-72925f5d5f51] [36m  Cloudinary Storage (505.9ms) [0m[34mDownloaded file from key: 24xbze0di6tkiyqcs7wiglr8z11w[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e2873636-1f0f-4b32-9832-72925f5d5f51] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e2873636-1f0f-4b32-9832-72925f5d5f51]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e2873636-1f0f-4b32-9832-72925f5d5f51]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 29]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e2873636-1f0f-4b32-9832-72925f5d5f51]   [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e2873636-1f0f-4b32-9832-72925f5d5f51] Performed ActiveStorage::AnalyzeJob (Job ID: e2873636-1f0f-4b32-9832-72925f5d5f51) from Inline(active_storage_analysis) in 525.67ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: e2873636-1f0f-4b32-9832-72925f5d5f51) to Inline(active_storage_analysis) with arguments: #<GlobalID:0x00005614f1d31268 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/29>>
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (0.6ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["equipment", "bench, squat rack"], ["location", "66 Gedling Pl, London"], ["type_of_gym", "Weights"], ["cost", 9], ["name", "Metal house gym"], ["user_id", 5], ["created_at", "2021-08-12 20:15:07.085286"], ["updated_at", "2021-08-12 20:15:07.085286"], ["latitude", 51.4982624], ["longitude", -0.0738571]]
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "s4tspw3y2hgdomlca4g8ww7c56bu"], ["filename", "gym.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 219615], ["checksum", "7UtjPQXAaXNMv6e94VRfwg=="], ["created_at", "2021-08-12 20:15:07.099629"]]
+  [1m[36mActiveStorage::Attachment Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 21], ["blob_id", 30], ["created_at", "2021-08-12 20:15:07.103388"]]
+  [1m[36mGym Update (0.6ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:15:07.107727"], ["id", 21]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[36m  Cloudinary Storage (1261.5ms) [0m[32mUploaded file to key: s4tspw3y2hgdomlca4g8ww7c56bu (checksum: 7UtjPQXAaXNMv6e94VRfwg==)[0m
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50ad8b81-225a-4b41-8013-bcf2636e10da] Performing ActiveStorage::AnalyzeJob (Job ID: 50ad8b81-225a-4b41-8013-bcf2636e10da) from Inline(active_storage_analysis) enqueued at 2021-08-12T20:15:08Z with arguments: #<GlobalID:0x00005614f1fa1ae8 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/30>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50ad8b81-225a-4b41-8013-bcf2636e10da] [36m  Cloudinary Storage (376.5ms) [0m[34mDownloaded file from key: s4tspw3y2hgdomlca4g8ww7c56bu[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50ad8b81-225a-4b41-8013-bcf2636e10da] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50ad8b81-225a-4b41-8013-bcf2636e10da]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50ad8b81-225a-4b41-8013-bcf2636e10da]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 30]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50ad8b81-225a-4b41-8013-bcf2636e10da]   [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50ad8b81-225a-4b41-8013-bcf2636e10da] Performed ActiveStorage::AnalyzeJob (Job ID: 50ad8b81-225a-4b41-8013-bcf2636e10da) from Inline(active_storage_analysis) in 397.43ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 50ad8b81-225a-4b41-8013-bcf2636e10da) to Inline(active_storage_analysis) with arguments: #<GlobalID:0x00005614f20c70a8 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/30>>
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (10.7ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["equipment", "tyres, hammers, yoke rack"], ["location", "38 New Kent Rd, Elephant and Castle, London"], ["type_of_gym", "Yoga Studio"], ["cost", 16], ["name", "The home gym for the big people"], ["user_id", 5], ["created_at", "2021-08-12 20:15:09.206793"], ["updated_at", "2021-08-12 20:15:09.206793"], ["latitude", 51.4948534], ["longitude", -0.0978893]]
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 22], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 22], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (1.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "qxn4etfxu1mlh5tf8ylt4tuemg3r"], ["filename", "gym.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 229073], ["checksum", "TgKjxFdvKLreXa8RTBRLtg=="], ["created_at", "2021-08-12 20:15:09.252433"]]
+  [1m[36mActiveStorage::Attachment Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 22], ["blob_id", 31], ["created_at", "2021-08-12 20:15:09.265324"]]
+  [1m[36mGym Update (0.7ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:15:09.269828"], ["id", 22]]
+  [1m[35m (11.0ms)[0m  [1m[35mCOMMIT[0m
+[36m  Cloudinary Storage (1418.9ms) [0m[32mUploaded file to key: qxn4etfxu1mlh5tf8ylt4tuemg3r (checksum: TgKjxFdvKLreXa8RTBRLtg==)[0m
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ad96aae2-6c0a-4e9c-8a1a-582ea1adf24f] Performing ActiveStorage::AnalyzeJob (Job ID: ad96aae2-6c0a-4e9c-8a1a-582ea1adf24f) from Inline(active_storage_analysis) enqueued at 2021-08-12T20:15:10Z with arguments: #<GlobalID:0x00005614f2344678 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/31>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ad96aae2-6c0a-4e9c-8a1a-582ea1adf24f] [36m  Cloudinary Storage (384.4ms) [0m[34mDownloaded file from key: qxn4etfxu1mlh5tf8ylt4tuemg3r[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ad96aae2-6c0a-4e9c-8a1a-582ea1adf24f] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ad96aae2-6c0a-4e9c-8a1a-582ea1adf24f]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ad96aae2-6c0a-4e9c-8a1a-582ea1adf24f]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 31]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ad96aae2-6c0a-4e9c-8a1a-582ea1adf24f]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ad96aae2-6c0a-4e9c-8a1a-582ea1adf24f] Performed ActiveStorage::AnalyzeJob (Job ID: ad96aae2-6c0a-4e9c-8a1a-582ea1adf24f) from Inline(active_storage_analysis) in 403.97ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: ad96aae2-6c0a-4e9c-8a1a-582ea1adf24f) to Inline(active_storage_analysis) with arguments: #<GlobalID:0x00005614f2495810 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/31>>
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (0.6ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["equipment", "yoga mats"], ["location", "8 Farrell Court, Elephant Rd, London"], ["type_of_gym", "Yoga Studio"], ["cost", 19], ["name", "The house of peace"], ["user_id", 5], ["created_at", "2021-08-12 20:15:11.397077"], ["updated_at", "2021-08-12 20:15:11.397077"]]
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 23], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 23], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "agqyworqov2sssdfam9moyx6q0s6"], ["filename", "gym.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 142265], ["checksum", "W5TSQTIbc/mwif7PTsGWMw=="], ["created_at", "2021-08-12 20:15:11.413708"]]
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 23], ["blob_id", 32], ["created_at", "2021-08-12 20:15:11.418131"]]
+  [1m[36mGym Update (0.6ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:15:11.421655"], ["id", 23]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[36m  Cloudinary Storage (956.0ms) [0m[32mUploaded file to key: agqyworqov2sssdfam9moyx6q0s6 (checksum: W5TSQTIbc/mwif7PTsGWMw==)[0m
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7b35f1cd-fe20-44f6-b3b2-81d3fe49efe8] Performing ActiveStorage::AnalyzeJob (Job ID: 7b35f1cd-fe20-44f6-b3b2-81d3fe49efe8) from Inline(active_storage_analysis) enqueued at 2021-08-12T20:15:12Z with arguments: #<GlobalID:0x00005614f26d2b00 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/32>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7b35f1cd-fe20-44f6-b3b2-81d3fe49efe8] [36m  Cloudinary Storage (437.2ms) [0m[34mDownloaded file from key: agqyworqov2sssdfam9moyx6q0s6[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7b35f1cd-fe20-44f6-b3b2-81d3fe49efe8] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7b35f1cd-fe20-44f6-b3b2-81d3fe49efe8]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7b35f1cd-fe20-44f6-b3b2-81d3fe49efe8]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 32]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7b35f1cd-fe20-44f6-b3b2-81d3fe49efe8]   [1m[35m (11.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7b35f1cd-fe20-44f6-b3b2-81d3fe49efe8] Performed ActiveStorage::AnalyzeJob (Job ID: 7b35f1cd-fe20-44f6-b3b2-81d3fe49efe8) from Inline(active_storage_analysis) in 474.84ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 7b35f1cd-fe20-44f6-b3b2-81d3fe49efe8) to Inline(active_storage_analysis) with arguments: #<GlobalID:0x00005614f27d8338 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/32>>
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (0.6ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["equipment", "squat rack, leg press"], ["location", "13-16, Empire Square West, Long Ln, London"], ["type_of_gym", "Weights"], ["cost", 15], ["name", "We only do legs"], ["user_id", 5], ["created_at", "2021-08-12 20:15:13.123079"], ["updated_at", "2021-08-12 20:15:13.123079"]]
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 24], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 24], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "utdb2cp9odf44k64h7v9c0dxiybh"], ["filename", "gym.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 67745], ["checksum", "b3z3ZwmjHKqJG6p4dcwDbA=="], ["created_at", "2021-08-12 20:15:13.137584"]]
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 24], ["blob_id", 33], ["created_at", "2021-08-12 20:15:13.141592"]]
+  [1m[36mGym Update (0.5ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:15:13.145981"], ["id", 24]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+[36m  Cloudinary Storage (860.6ms) [0m[32mUploaded file to key: utdb2cp9odf44k64h7v9c0dxiybh (checksum: b3z3ZwmjHKqJG6p4dcwDbA==)[0m
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [31480be9-0a2b-4464-a4be-1111176e2738] Performing ActiveStorage::AnalyzeJob (Job ID: 31480be9-0a2b-4464-a4be-1111176e2738) from Inline(active_storage_analysis) enqueued at 2021-08-12T20:15:14Z with arguments: #<GlobalID:0x00005614f29f2498 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/33>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [31480be9-0a2b-4464-a4be-1111176e2738] [36m  Cloudinary Storage (508.4ms) [0m[34mDownloaded file from key: utdb2cp9odf44k64h7v9c0dxiybh[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [31480be9-0a2b-4464-a4be-1111176e2738] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [31480be9-0a2b-4464-a4be-1111176e2738]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [31480be9-0a2b-4464-a4be-1111176e2738]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 33]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [31480be9-0a2b-4464-a4be-1111176e2738]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [31480be9-0a2b-4464-a4be-1111176e2738] Performed ActiveStorage::AnalyzeJob (Job ID: 31480be9-0a2b-4464-a4be-1111176e2738) from Inline(active_storage_analysis) in 534.87ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 31480be9-0a2b-4464-a4be-1111176e2738) to Inline(active_storage_analysis) with arguments: #<GlobalID:0x00005614f2ac8340 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/33>>
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (0.5ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["equipment", "empty garage"], ["location", "135 Borough High St, London"], ["type_of_gym", "Cardio"], ["cost", 13], ["name", "An empty garage, exercise how you want!"], ["user_id", 5], ["created_at", "2021-08-12 20:15:15.404485"], ["updated_at", "2021-08-12 20:15:15.404485"], ["latitude", 51.5031986], ["longitude", -0.0917395]]
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 25], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 25], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "o91f67hiv795dkt9f5h4x9oe2lwi"], ["filename", "gym.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 145407], ["checksum", "6EMCOHuBowgOj9eVBHtRSg=="], ["created_at", "2021-08-12 20:15:15.420292"]]
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 25], ["blob_id", 34], ["created_at", "2021-08-12 20:15:15.424992"]]
+  [1m[36mGym Update (0.5ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:15:15.429126"], ["id", 25]]
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+[36m  Cloudinary Storage (1097.8ms) [0m[32mUploaded file to key: o91f67hiv795dkt9f5h4x9oe2lwi (checksum: 6EMCOHuBowgOj9eVBHtRSg==)[0m
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c73e1513-d5ca-4201-af7e-765e7ffc2b80] Performing ActiveStorage::AnalyzeJob (Job ID: c73e1513-d5ca-4201-af7e-765e7ffc2b80) from Inline(active_storage_analysis) enqueued at 2021-08-12T20:15:16Z with arguments: #<GlobalID:0x00005614f2d364b0 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/34>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c73e1513-d5ca-4201-af7e-765e7ffc2b80] [36m  Cloudinary Storage (359.8ms) [0m[34mDownloaded file from key: o91f67hiv795dkt9f5h4x9oe2lwi[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c73e1513-d5ca-4201-af7e-765e7ffc2b80] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c73e1513-d5ca-4201-af7e-765e7ffc2b80]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c73e1513-d5ca-4201-af7e-765e7ffc2b80]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 34]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c73e1513-d5ca-4201-af7e-765e7ffc2b80]   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c73e1513-d5ca-4201-af7e-765e7ffc2b80] Performed ActiveStorage::AnalyzeJob (Job ID: c73e1513-d5ca-4201-af7e-765e7ffc2b80) from Inline(active_storage_analysis) in 378.06ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: c73e1513-d5ca-4201-af7e-765e7ffc2b80) to Inline(active_storage_analysis) with arguments: #<GlobalID:0x00005614f2e3fe10 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/34>>
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (0.5ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["equipment", "dumbells "], ["location", "130-138 Newington Butts, London"], ["type_of_gym", "Weights"], ["cost", 31], ["name", "A gym which has dumbells running all the way to 50kg"], ["user_id", 5], ["created_at", "2021-08-12 20:15:17.478717"], ["updated_at", "2021-08-12 20:15:17.478717"], ["latitude", 51.4926772], ["longitude", -0.101253]]
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 26], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 26], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "errtv0nc6w6z7sqxylnj7xf88uu0"], ["filename", "gym.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 223989], ["checksum", "N5lIpJAdA3+WTEuiHRXCYw=="], ["created_at", "2021-08-12 20:15:17.493002"]]
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 26], ["blob_id", 35], ["created_at", "2021-08-12 20:15:17.497946"]]
+  [1m[36mGym Update (0.6ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:15:17.500925"], ["id", 26]]
+  [1m[35m (11.5ms)[0m  [1m[35mCOMMIT[0m
+[36m  Cloudinary Storage (1522.4ms) [0m[32mUploaded file to key: errtv0nc6w6z7sqxylnj7xf88uu0 (checksum: N5lIpJAdA3+WTEuiHRXCYw==)[0m
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6ce5bd26-1e3a-49cb-b000-6d76633a0ca6] Performing ActiveStorage::AnalyzeJob (Job ID: 6ce5bd26-1e3a-49cb-b000-6d76633a0ca6) from Inline(active_storage_analysis) enqueued at 2021-08-12T20:15:19Z with arguments: #<GlobalID:0x00005614f30bda20 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/35>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6ce5bd26-1e3a-49cb-b000-6d76633a0ca6] [36m  Cloudinary Storage (803.6ms) [0m[34mDownloaded file from key: errtv0nc6w6z7sqxylnj7xf88uu0[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6ce5bd26-1e3a-49cb-b000-6d76633a0ca6] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6ce5bd26-1e3a-49cb-b000-6d76633a0ca6]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6ce5bd26-1e3a-49cb-b000-6d76633a0ca6]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 35]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6ce5bd26-1e3a-49cb-b000-6d76633a0ca6]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6ce5bd26-1e3a-49cb-b000-6d76633a0ca6] Performed ActiveStorage::AnalyzeJob (Job ID: 6ce5bd26-1e3a-49cb-b000-6d76633a0ca6) from Inline(active_storage_analysis) in 834.72ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 6ce5bd26-1e3a-49cb-b000-6d76633a0ca6) to Inline(active_storage_analysis) with arguments: #<GlobalID:0x00005614f325b800 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/35>>
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (0.6ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["equipment", "traedmil, stationary bike"], ["location", "2b More London Riverside, London"], ["type_of_gym", "Cardio"], ["cost", 13], ["name", "Our lovely home gym has three stationary bikes and two treadmils"], ["user_id", 5], ["created_at", "2021-08-12 20:15:20.388141"], ["updated_at", "2021-08-12 20:15:20.388141"]]
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 27], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 27], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "c6eukc1x674fu8dbx0ogsvci7meg"], ["filename", "gym.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 404473], ["checksum", "MXZSjipT0haAxe9dcjPlEA=="], ["created_at", "2021-08-12 20:15:20.431086"]]
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 27], ["blob_id", 36], ["created_at", "2021-08-12 20:15:20.434992"]]
+  [1m[36mGym Update (0.5ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:15:20.439456"], ["id", 27]]
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+[36m  Cloudinary Storage (1161.4ms) [0m[32mUploaded file to key: c6eukc1x674fu8dbx0ogsvci7meg (checksum: MXZSjipT0haAxe9dcjPlEA==)[0m
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [91c2e272-f776-4253-b9b0-16c88fe7e987] Performing ActiveStorage::AnalyzeJob (Job ID: 91c2e272-f776-4253-b9b0-16c88fe7e987) from Inline(active_storage_analysis) enqueued at 2021-08-12T20:15:21Z with arguments: #<GlobalID:0x00005614f0a9a8c0 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/36>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [91c2e272-f776-4253-b9b0-16c88fe7e987] [36m  Cloudinary Storage (899.6ms) [0m[34mDownloaded file from key: c6eukc1x674fu8dbx0ogsvci7meg[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [91c2e272-f776-4253-b9b0-16c88fe7e987] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [91c2e272-f776-4253-b9b0-16c88fe7e987]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [91c2e272-f776-4253-b9b0-16c88fe7e987]   [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 36]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [91c2e272-f776-4253-b9b0-16c88fe7e987]   [1m[35m (10.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [91c2e272-f776-4253-b9b0-16c88fe7e987] Performed ActiveStorage::AnalyzeJob (Job ID: 91c2e272-f776-4253-b9b0-16c88fe7e987) from Inline(active_storage_analysis) in 928.3ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 91c2e272-f776-4253-b9b0-16c88fe7e987) to Inline(active_storage_analysis) with arguments: #<GlobalID:0x00005614f0d8a2d8 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/36>>
+  [1m[35m (9.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "gyms"[0m
+Started GET "/" for ::1 at 2021-08-12 21:15:43 +0100
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mGym Load (1.5ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" ORDER BY "gyms"."id" ASC LIMIT $1[0m  [["LIMIT", 4]]
+  ↳ app/controllers/pages_controller.rb:6:in `home'
+  Rendering pages/home.html.erb within layouts/application
+Started GET "/" for ::1 at 2021-08-12 21:15:47 +0100
+Processing by PagesController#home as HTML
+  [1m[36mGym Load (1.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" ORDER BY "gyms"."id" ASC LIMIT $1[0m  [["LIMIT", 4]]
+  ↳ app/controllers/pages_controller.rb:6:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mGym Load (1.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms"[0m
+  ↳ app/views/pages/home.html.erb:48
+  Rendered pages/home.html.erb within layouts/application (Duration: 10925.4ms | Allocations: 186361)
+Completed 500 Internal Server Error in 11020ms (ActiveRecord: 13.7ms | Allocations: 201581)
+
+
+  
+ActionView::Template::Error (undefined method `photos' for #<Gym:0x000055e4254e5520>
+Did you mean?  photo
+               photo=):
+    47:   <div class="cards">
+    48:     <% @gyms[0..3].each do |gym| %>
+    49:     <div class="card rounded" style="width: 16rem;">
+    50:       <%= cl_image_tag gym.photos.first.key, height: 300, width: 255, crop: :fill %>
+    51:       <div class="card-body">
+    52:         <h5 class="card-title"><%= link_to gym.name, gym_path(gym) %></h5>
+    53:       </div>
+  
+app/views/pages/home.html.erb:50
+app/views/pages/home.html.erb:48:in `each'
+app/views/pages/home.html.erb:48
+  [1m[36mGym Load (1.6ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms"[0m
+  ↳ app/views/pages/home.html.erb:48
+  Rendered pages/home.html.erb within layouts/application (Duration: 9052.1ms | Allocations: 422132)
+Completed 500 Internal Server Error in 9071ms (ActiveRecord: 3.4ms | Allocations: 423740)
+
+
+  
+ActionView::Template::Error (undefined method `photos' for #<Gym:0x00007fa44c6400d0>
+Did you mean?  photo
+               photo=):
+    47:   <div class="cards">
+    48:     <% @gyms[0..3].each do |gym| %>
+    49:     <div class="card rounded" style="width: 16rem;">
+    50:       <%= cl_image_tag gym.photos.first.key, height: 300, width: 255, crop: :fill %>
+    51:       <div class="card-body">
+    52:         <h5 class="card-title"><%= link_to gym.name, gym_path(gym) %></h5>
+    53:       </div>
+  
+app/views/pages/home.html.erb:50
+app/views/pages/home.html.erb:48:in `each'
+app/views/pages/home.html.erb:48
+Started GET "/" for ::1 at 2021-08-12 21:16:54 +0100
+Processing by PagesController#home as HTML
+  [1m[36mGym Load (3.6ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" ORDER BY "gyms"."id" ASC LIMIT $1[0m  [["LIMIT", 4]]
+  ↳ app/controllers/pages_controller.rb:6:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mGym Load (6.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms"[0m
+  ↳ app/views/pages/home.html.erb:48
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:50
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:50
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:50
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:50
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:50
+  [1m[36mActiveStorage::Blob Load (2.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:50
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:50
+  [1m[36mActiveStorage::Blob Load (4.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:50
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:126
+  Rendered pages/home.html.erb within layouts/application (Duration: 244.2ms | Allocations: 36451)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/rokas/code/augunasr/Spot-me/public/packs
+[Webpacker] Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+
+[Webpacker] Hash: 652c9a778db42d3d5717
+Version: webpack 4.46.0
+Time: 7506ms
+Built at: 08/12/2021 9:17:05 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-262cded1d081ef33eaad.js   1.51 MiB  application  [emitted] [immutable]  application
+js/application-262cded1d081ef33eaad.js.map   1.66 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-262cded1d081ef33eaad.js js/application-262cded1d081ef33eaad.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.44 KiB {application} [built]
+[./app/javascript/plugins/init_mapbox.js] 2.36 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} [built]
+    + 13 hidden modules
+
+  Rendered shared/_navbar.html.erb (Duration: 12.5ms | Allocations: 1007)
+  Rendered shared/_flashes.html.erb (Duration: 0.9ms | Allocations: 184)
+  Rendered shared/_footer.html.erb (Duration: 1.6ms | Allocations: 212)
+Completed 200 OK in 11334ms (Views: 11271.5ms | ActiveRecord: 47.3ms | Allocations: 52775)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-12 21:17:32 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1424.8ms | Allocations: 366696)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 6.8ms | Allocations: 600)
+  Rendered shared/_flashes.html.erb (Duration: 0.3ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 53)
+Completed 200 OK in 1681ms (Views: 1629.3ms | ActiveRecord: 0.0ms | Allocations: 387054)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-08-12 21:17:45 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"iutupDtvjYQeTzk032RturIpLEU60UKujmM141siGwgHPk1ctOgD52IWYroJmg0B4WZOb82RGq3cJ/IynrP7Jw==", "user"=>{"email"=>"rokas@rokas", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "rokas@rokas"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 21ms (ActiveRecord: 2.1ms | Allocations: 2055)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"iutupDtvjYQeTzk032RturIpLEU60UKujmM141siGwgHPk1ctOgD52IWYroJmg0B4WZOb82RGq3cJ/IynrP7Jw==", "user"=>{"email"=>"rokas@rokas", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 27.9ms | Allocations: 7385)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 559)
+  Rendered shared/_flashes.html.erb (Duration: 0.4ms | Allocations: 15)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 52)
+Completed 200 OK in 463ms (Views: 78.9ms | ActiveRecord: 0.0ms | Allocations: 20186)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-08-12 21:17:51 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 535)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 47.1ms | Allocations: 11691)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.9ms | Allocations: 598)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 53)
+Completed 200 OK in 79ms (Views: 77.0ms | ActiveRecord: 0.0ms | Allocations: 24639)
+
+
+Started POST "/users" for ::1 at 2021-08-12 21:18:08 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"O/YUmIEHLxKh6v6AoN5Wm091+3eAeH3a+Aw7ypuEJbK7Qf7c5UMkl8h4cCjNr3nxMXuUyZd0q2hHzG4HgQG7vg==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "first_name"=>"Rokas", "last_name"=>"", "about_me"=>""}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :about_me[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (5.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "test@test.com"], ["encrypted_password", "$2a$12$u72wH8qotVF2qpMzokwIw.VkhO8IHhX2p8sMpxNOEc7SElRaJz2em"], ["created_at", "2021-08-12 20:18:08.402092"], ["updated_at", "2021-08-12 20:18:08.402092"], ["first_name", "Rokas"], ["last_name", ""]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 384ms (ActiveRecord: 8.6ms | Allocations: 8919)
+
+
+Started GET "/" for ::1 at 2021-08-12 21:18:08 +0100
+Processing by PagesController#home as HTML
+  [1m[36mGym Load (0.6ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" ORDER BY "gyms"."id" ASC LIMIT $1[0m  [["LIMIT", 4]]
+  ↳ app/controllers/pages_controller.rb:6:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mGym Load (4.0ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms"[0m
+  ↳ app/views/pages/home.html.erb:48
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:50
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:50
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:50
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:50
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:50
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:50
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:50
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:50
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:126
+  Rendered pages/home.html.erb within layouts/application (Duration: 93.5ms | Allocations: 13040)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 7.7ms | Allocations: 1201)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 53)
+Completed 200 OK in 154ms (Views: 134.9ms | ActiveRecord: 11.1ms | Allocations: 26423)
+
+
+Started GET "/profile" for ::1 at 2021-08-12 21:18:16 +0100
+Processing by PagesController#profile as HTML
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:10:in `profile'
+  Rendering pages/profile.html.erb within layouts/application
+  [1m[36mBooking Load (1.0ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/pages/profile.html.erb:61
+  [1m[36mGym Load (0.6ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/pages/profile.html.erb:90
+  Rendered pages/profile.html.erb within layouts/application (Duration: 71.1ms | Allocations: 7311)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 16.4ms | Allocations: 1225)
+  Rendered shared/_flashes.html.erb (Duration: 0.4ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 52)
+Completed 200 OK in 173ms (Views: 123.7ms | ActiveRecord: 19.6ms | Allocations: 21011)
+
+
+Started GET "/gyms" for ::1 at 2021-08-12 21:18:19 +0100
+Processing by GymsController#index as HTML
+  [1m[36mGym Load (1.6ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE (gyms.latitude IS NOT NULL AND gyms.longitude IS NOT NULL)[0m
+  ↳ app/controllers/gyms_controller.rb:7:in `map'
+  Rendering gyms/index.html.erb within layouts/application
+  [1m[36mGym Load (0.7ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms"[0m
+  ↳ app/views/gyms/index.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (9.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 22], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 23], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 24], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 25], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 26], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 27], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  Rendered gyms/index.html.erb within layouts/application (Duration: 284.1ms | Allocations: 23402)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:13
+  Rendered shared/_navbar.html.erb (Duration: 15.2ms | Allocations: 2187)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 53)
+Completed 200 OK in 368ms (Views: 320.9ms | ActiveRecord: 25.4ms | Allocations: 40950)
+
+
+Started GET "/gyms/18" for ::1 at 2021-08-12 21:18:29 +0100
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mGym Load (0.6ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:60:in `set_gym'
+  [1m[36mCACHE Gym Load (0.0ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:38:in `show'
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:13
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:13
+  Rendered bookings/_form.html.erb (Duration: 27.9ms | Allocations: 3952)
+  Rendered gyms/show.html.erb within layouts/application (Duration: 46.0ms | Allocations: 6647)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:13
+  Rendered shared/_navbar.html.erb (Duration: 17.2ms | Allocations: 2184)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 53)
+Completed 200 OK in 897ms (Views: 137.1ms | ActiveRecord: 15.8ms | Allocations: 30390)
+
+
+Started GET "/profile" for ::1 at 2021-08-12 21:18:46 +0100
+Processing by PagesController#profile as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:10:in `profile'
+  Rendering pages/profile.html.erb within layouts/application
+  [1m[36mBooking Load (0.9ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/pages/profile.html.erb:61
+  [1m[36mGym Load (1.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/pages/profile.html.erb:90
+  Rendered pages/profile.html.erb within layouts/application (Duration: 25.0ms | Allocations: 1621)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.1ms | Allocations: 1226)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 52)
+Completed 200 OK in 166ms (Views: 155.5ms | ActiveRecord: 2.8ms | Allocations: 15254)
+
+
+Started GET "/gyms/new" for ::1 at 2021-08-12 21:18:48 +0100
+Processing by GymsController#new as HTML
+  Rendering gyms/new.html.erb within layouts/application
+  Rendered gyms/new.html.erb within layouts/application (Duration: 123.1ms | Allocations: 16555)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:13
+  Rendered shared/_navbar.html.erb (Duration: 14.4ms | Allocations: 2184)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 53)
+Completed 200 OK in 179ms (Views: 174.7ms | ActiveRecord: 0.8ms | Allocations: 30304)
+
+
+Started POST "/gyms" for ::1 at 2021-08-12 21:19:10 +0100
+Processing by GymsController#create as HTML
+  Parameters: {"authenticity_token"=>"697VrvCavkbdeP+esk5vTBKmlPHHxDI5gVgbtmwJ5Fh1yc/pFwtYplWAYFqjI6Xe2C+HaPwtvqVQw/cjeOReag==", "gym"=>{"name"=>"Test Gym", "location"=>"138 Kingsland Rd, London E2 8DY", "type_of_gym"=>"Weights", "equipment"=>"weights", "cost"=>"10", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fa46c969c00 @tempfile=#<Tempfile:/tmp/RackMultipart20210812-14588-8fl9eq.jpg>, @original_filename="cross.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"gym[photo]\"; filename=\"cross.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Gym"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:29:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gyms_controller.rb:30:in `create'
+  [1m[36mGym Create (10.3ms)[0m  [1m[32mINSERT INTO "gyms" ("equipment", "location", "type_of_gym", "cost", "name", "user_id", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["equipment", "weights"], ["location", "138 Kingsland Rd, London E2 8DY"], ["type_of_gym", "Weights"], ["cost", 10], ["name", "Test Gym"], ["user_id", 6], ["created_at", "2021-08-12 20:19:11.022248"], ["updated_at", "2021-08-12 20:19:11.022248"], ["latitude", 51.5308392], ["longitude", -0.0771505]]
+  ↳ app/controllers/gyms_controller.rb:30:in `create'
+  [1m[36mActiveStorage::Blob Load (2.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 28], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:30:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 28], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:30:in `create'
+  [1m[36mActiveStorage::Blob Create (1.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "3ho1g149ffxf8ba8i949c5aefqi0"], ["filename", "cross.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 142265], ["checksum", "W5TSQTIbc/mwif7PTsGWMw=="], ["created_at", "2021-08-12 20:19:11.099386"]]
+  ↳ app/controllers/gyms_controller.rb:30:in `create'
+  [1m[36mActiveStorage::Attachment Create (1.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Gym"], ["record_id", 28], ["blob_id", 37], ["created_at", "2021-08-12 20:19:11.125510"]]
+  ↳ app/controllers/gyms_controller.rb:30:in `create'
+  [1m[36mGym Update (7.3ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1 WHERE "gyms"."id" = $2[0m  [["updated_at", "2021-08-12 20:19:11.137779"], ["id", 28]]
+  ↳ app/controllers/gyms_controller.rb:30:in `create'
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gyms_controller.rb:30:in `create'
+[36m  Cloudinary Storage (1586.3ms) [0m[32mUploaded file to key: 3ho1g149ffxf8ba8i949c5aefqi0 (checksum: W5TSQTIbc/mwif7PTsGWMw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: d2c9d9b8-6204-4adb-b84f-29ad4235c1c2) to Async(active_storage_analysis) with arguments: #<GlobalID:0x00007fa479852440 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/37>>
+Redirected to http://localhost:3000/gyms/28
+Completed 302 Found in 2700ms (ActiveRecord: 29.5ms | Allocations: 170384)
+
+
+  [1m[36mActiveStorage::Blob Load (6.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d2c9d9b8-6204-4adb-b84f-29ad4235c1c2] Performing ActiveStorage::AnalyzeJob (Job ID: d2c9d9b8-6204-4adb-b84f-29ad4235c1c2) from Async(active_storage_analysis) enqueued at 2021-08-12T20:19:12Z with arguments: #<GlobalID:0x00007fa479915aa8 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/37>>
+Started GET "/gyms/28" for ::1 at 2021-08-12 21:19:12 +0100
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mGym Load (1.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:60:in `set_gym'
+  [1m[36mCACHE Gym Load (1.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:38:in `show'
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d2c9d9b8-6204-4adb-b84f-29ad4235c1c2] [36m  Cloudinary Storage (307.6ms) [0m[34mDownloaded file from key: 3ho1g149ffxf8ba8i949c5aefqi0[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d2c9d9b8-6204-4adb-b84f-29ad4235c1c2] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d2c9d9b8-6204-4adb-b84f-29ad4235c1c2]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d2c9d9b8-6204-4adb-b84f-29ad4235c1c2]   [1m[36mActiveStorage::Blob Update (6.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 37]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d2c9d9b8-6204-4adb-b84f-29ad4235c1c2]   [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d2c9d9b8-6204-4adb-b84f-29ad4235c1c2] Performed ActiveStorage::AnalyzeJob (Job ID: d2c9d9b8-6204-4adb-b84f-29ad4235c1c2) from Async(active_storage_analysis) in 350.79ms
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 28], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:13
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:13
+  Rendered bookings/_form.html.erb (Duration: 13.0ms | Allocations: 3562)
+  Rendered gyms/show.html.erb within layouts/application (Duration: 32.9ms | Allocations: 5859)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:13
+  Rendered shared/_navbar.html.erb (Duration: 8.3ms | Allocations: 2215)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 25)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 54)
+Completed 200 OK in 857ms (Views: 72.3ms | ActiveRecord: 4.6ms | Allocations: 29020)
+
+
+Started GET "/gyms" for ::1 at 2021-08-12 21:19:18 +0100
+Processing by GymsController#index as HTML
+  [1m[36mGym Load (2.1ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE (gyms.latitude IS NOT NULL AND gyms.longitude IS NOT NULL)[0m
+  ↳ app/controllers/gyms_controller.rb:7:in `map'
+  Rendering gyms/index.html.erb within layouts/application
+  [1m[36mGym Load (0.7ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms"[0m
+  ↳ app/views/gyms/index.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (13.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (8.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 22], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 23], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 24], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 25], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 26], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 27], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 28], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  Rendered gyms/index.html.erb within layouts/application (Duration: 209.1ms | Allocations: 25238)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:13
+  Rendered shared/_navbar.html.erb (Duration: 9.8ms | Allocations: 2180)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 52)
+Completed 200 OK in 274ms (Views: 215.4ms | ActiveRecord: 38.6ms | Allocations: 42166)
+
+
+Started GET "/profile" for ::1 at 2021-08-12 21:19:24 +0100
+Processing by PagesController#profile as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:10:in `profile'
+  Rendering pages/profile.html.erb within layouts/application
+  [1m[36mBooking Load (0.5ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/pages/profile.html.erb:61
+  [1m[36mGym Load (0.9ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/pages/profile.html.erb:90
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 28], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/pages/profile.html.erb:102
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/pages/profile.html.erb:103
+  Rendered pages/profile.html.erb within layouts/application (Duration: 22.1ms | Allocations: 3915)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.9ms | Allocations: 1225)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 52)
+Completed 200 OK in 90ms (Views: 81.2ms | ActiveRecord: 2.7ms | Allocations: 17547)
+
+
+Started DELETE "/gyms/28" for ::1 at 2021-08-12 21:19:27 +0100
+Processing by GymsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"08NXVYnZiI9Klctb6IAOgshFpTmU8cG0UP1YfoIjUvrxTqjvqaYpkW5/5/y2sXXU5SwJp+1F/P18WzRMPhBd7g==", "id"=>"28"}
+  [1m[36mGym Load (6.8ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:60:in `set_gym'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gyms_controller.rb:53:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 28], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:53:in `destroy'
+  [1m[36mActiveStorage::Attachment Destroy (1.0ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 37]]
+  ↳ app/controllers/gyms_controller.rb:53:in `destroy'
+  [1m[36mGym Destroy (8.9ms)[0m  [1m[31mDELETE FROM "gyms" WHERE "gyms"."id" = $1[0m  [["id", 28]]
+  ↳ app/controllers/gyms_controller.rb:53:in `destroy'
+  [1m[35m (10.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gyms_controller.rb:53:in `destroy'
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:53:in `destroy'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 5ef805d4-3892-4a92-a06e-172b5f6b295a) to Async(active_storage_purge) with arguments: #<GlobalID:0x00007fa48087e9d0 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/37>>
+Redirected to http://localhost:3000/gyms
+Completed 302 Found in 116ms (ActiveRecord: 28.7ms | Allocations: 8958)
+
+
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [5ef805d4-3892-4a92-a06e-172b5f6b295a] Performing ActiveStorage::PurgeJob (Job ID: 5ef805d4-3892-4a92-a06e-172b5f6b295a) from Async(active_storage_purge) enqueued at 2021-08-12T20:19:27Z with arguments: #<GlobalID:0x00007fa4808b3720 @uri=#<URI::GID gid://spot-me/ActiveStorage::Blob/37>>
+[ActiveJob] [ActiveStorage::PurgeJob] [5ef805d4-3892-4a92-a06e-172b5f6b295a]   [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [5ef805d4-3892-4a92-a06e-172b5f6b295a]   [1m[36mActiveStorage::Attachment Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 37], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [5ef805d4-3892-4a92-a06e-172b5f6b295a]   [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 37], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+Started GET "/gyms" for ::1 at 2021-08-12 21:19:27 +0100
+[ActiveJob] [ActiveStorage::PurgeJob] [5ef805d4-3892-4a92-a06e-172b5f6b295a]   [1m[36mActiveStorage::Blob Destroy (13.7ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 37]]
+Processing by GymsController#index as HTML
+  [1m[36mGym Load (0.9ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE (gyms.latitude IS NOT NULL AND gyms.longitude IS NOT NULL)[0m
+  ↳ app/controllers/gyms_controller.rb:7:in `map'
+[ActiveJob] [ActiveStorage::PurgeJob] [5ef805d4-3892-4a92-a06e-172b5f6b295a]   [1m[35m (14.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering gyms/index.html.erb within layouts/application
+  [1m[36mGym Load (1.0ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms"[0m
+  ↳ app/views/gyms/index.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (3.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 22], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 23], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 24], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (4.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 25], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 26], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 27], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/gyms/index.html.erb:9
+  Rendered gyms/index.html.erb within layouts/application (Duration: 189.1ms | Allocations: 23019)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:13
+  Rendered shared/_navbar.html.erb (Duration: 20.9ms | Allocations: 2180)
+  Rendered shared/_flashes.html.erb (Duration: 0.3ms | Allocations: 21)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 52)
+Completed 200 OK in 300ms (Views: 234.9ms | ActiveRecord: 24.4ms | Allocations: 41896)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [5ef805d4-3892-4a92-a06e-172b5f6b295a] [36m  Cloudinary Storage (622.5ms) [0m[31mDeleted file from key: 3ho1g149ffxf8ba8i949c5aefqi0[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [5ef805d4-3892-4a92-a06e-172b5f6b295a] Performed ActiveStorage::PurgeJob (Job ID: 5ef805d4-3892-4a92-a06e-172b5f6b295a) from Async(active_storage_purge) in 693.03ms
+Started GET "/gyms/18" for ::1 at 2021-08-12 21:19:30 +0100
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mGym Load (0.6ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:60:in `set_gym'
+  [1m[36mCACHE Gym Load (0.0ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:38:in `show'
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Gym"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:13
+  [1m[36mActiveStorage::Blob Load (11.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:13
+  Rendered bookings/_form.html.erb (Duration: 33.6ms | Allocations: 3418)
+  Rendered gyms/show.html.erb within layouts/application (Duration: 68.9ms | Allocations: 5669)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:13
+  Rendered shared/_navbar.html.erb (Duration: 21.4ms | Allocations: 2179)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 52)
+Completed 200 OK in 880ms (Views: 134.2ms | ActiveRecord: 14.7ms | Allocations: 24414)
+
+
+Started POST "/gyms/18/bookings" for ::1 at 2021-08-12 21:19:43 +0100
+Processing by BookingsController#create as HTML
+  Parameters: {"authenticity_token"=>"wz3JSk1V12iShBmYJe8fbTmuELtGD2jGlp+VJHvti2SfJ7H4epxip1ckvIApAYuxtH0d5U61RwP/5DOajDZmeQ==", "booking"=>{"booking_start"=>"2021-08-12T00:22", "booking_end"=>"2021-08-03T23:21"}, "commit"=>"Reserve", "gym_id"=>"18"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:15:in `create'
+  [1m[36mGym Load (0.9ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:48:in `find_gym'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bookings_controller.rb:18:in `create'
+  [1m[36mBooking Create (10.3ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "gym_id", "booking_start", "booking_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 6], ["gym_id", 18], ["booking_start", "2021-08-12 00:22:00"], ["booking_end", "2021-08-03 23:21:00"], ["created_at", "2021-08-12 20:19:43.085212"], ["updated_at", "2021-08-12 20:19:43.085212"]]
+  ↳ app/controllers/bookings_controller.rb:18:in `create'
+  [1m[35m (14.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bookings_controller.rb:18:in `create'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 81ms (ActiveRecord: 26.3ms | Allocations: 5331)
+
+
+Started GET "/profile" for ::1 at 2021-08-12 21:19:43 +0100
+Processing by PagesController#profile as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:10:in `profile'
+  Rendering pages/profile.html.erb within layouts/application
+  [1m[36mBooking Load (1.0ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/pages/profile.html.erb:61
+  [1m[36mGym Load (0.6ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/pages/profile.html.erb:65
+  [1m[36mGym Load (0.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/pages/profile.html.erb:90
+  Rendered pages/profile.html.erb within layouts/application (Duration: 22.2ms | Allocations: 2708)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 15.7ms | Allocations: 1221)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 52)
+Completed 200 OK in 111ms (Views: 98.8ms | ActiveRecord: 3.6ms | Allocations: 16314)
+
+

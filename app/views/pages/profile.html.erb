@@ -66,7 +66,9 @@
             <p><i class="fas fa-calendar-alt"></i> <%= booking.booking_start.strftime("%dth of %B at %I:%M %p") %></p>
             <p><i class="fas fa-money-bill"></i> 
             £<%= booking.gym.cost %> per session </p>
-            <%= link_to "Edit", edit_gym_booking_path(booking.gym, booking) %>
+            <div class="buttons">
+             <button type="button" class="btn btn-info"><%= link_to "Edit", edit_gym_booking_path(booking.gym, booking) %></button>
+            </div>
             </div>
           </div>
             <% end %>

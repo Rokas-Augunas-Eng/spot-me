@@ -50,7 +50,7 @@ ruby-install ruby
 
 1. Clone the repo
 ```
-git clone https://github.com/augunasr/Bike-fix.git
+git clone https://github.com/augunasr/Spot-me.git
 ```
 2. Install dependencies
 ```
@@ -106,4 +106,4 @@ git push heroku
 [![Linkedin Badge](https://img.shields.io/badge/-Rokas-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rokasaugunas/)](https://www.linkedin.com//in/rokasaugunas/)
 [![Gmail Badge](https://img.shields.io/badge/-augunasr@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:augunasr@gmail.com)](mailto:augunasr@gmail.com)
 
-Project Link: [Git hub repository](https://github.com/augunasr/Bike-fix)
+Project Link: [Git hub repository](https://github.com/augunasr/Spot-me)

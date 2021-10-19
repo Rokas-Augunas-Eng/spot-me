@@ -1,6 +1,6 @@
 .intro {
   background: #15c4d4;
-  position:fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -14,12 +14,12 @@
     color: white;
     font-size: 3rem;
     text-align: center;
-    
+
     .hide {
       background: black;
       overflow: hidden;
     }
-  
+
     .hide span {
       transform: translateY(100%);
       display: inline-block;
@@ -29,35 +29,41 @@
 
 .slider {
   background: black;
-  position:fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 2;
-  transform: translateY(100%)
+  transform: translateY(100%);
 }
 
 .vid-holder {
-  min-width: 100%;
-  height: 100vh;
+  position: relative;
+  margin-top: -20px;
 
   .video {
-    position: absolute;
-    top: 50%; left: 50%;
-    z-index: -2;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    // position: relative;
+    // top: 50%;
+    // left: 50%;
+    // z-index: -2;
+    // min-width: 100%;
+    // // min-height: 100%;
+    // width: auto;
+    // height: auto;
+    // transform: translate(-50%, -50%);
   }
 }
 
-.video-content {
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
-  top: 50vh;
-  left: 511px;
+  top: 50%;
+  width: 100%;
 
   .main-text {
     color: white;
@@ -66,8 +72,8 @@
   }
 
   .sub-text {
-  color: white;
-  font-size: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
   }
 
   .searchbar {
@@ -81,54 +87,61 @@
     width: 350px;
     height: 40px;
     border-radius: 10px;
+    padding: 10px;
   }
 
   .search_button {
     height: 40px;
     border-radius: 5px;
     color: white;
-    background: #23B8BF;
+    background: #23b8bf;
     border-radius: 15px;
     border: 2px solid black;
   }
 }
 
 .bottom-container {
-  margin-top: 100px;
+  margin-top: 20px;
   margin-bottom: 50px;
   display: flex;
   flex-direction: column;
 
-    h2 {
-      text-align: center;
-    }
+  h2 {
+    text-align: center;
+  }
 
   .bottom-cards {
-    
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     margin: 20px 8px;
     padding: 0;
-    justify-content: space-around;
+    justify-content: center;
 
     .bottom-card {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 20%;
-      background-color: #23B8BF;
-      border-radius:10px;
+      background-color: #23b8bf;
+      border-radius: 10px;
+      transition: 0.3s;
+      margin: 0 10px;
+
+      &:hover {
+        transform: scale(1.1);
+        color: rgb(37, 150, 190);
+      }
 
       .bottom-image {
-        width: 100%;
+        border-radius: 10px 10px 0px 0px;
       }
 
       .bottom-card-text {
-        display: flex;
+        color: white;
         font-size: 18px;
         font-weight: 400;
         text-align: center;
+        margin-top: 10px;
       }
     }
   }

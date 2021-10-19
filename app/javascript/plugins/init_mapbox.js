@@ -35,7 +35,7 @@ const initMapbox = () => {
         .addTo(map);
       });
     } else {
-  // else
+      
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10',

@@ -1,22 +1,87 @@
 // Import page-specific CSS files here.
-#map {
-  position: sticky;
-  top: 90px;
-  margin-bottom: 20px;
-}
-
 .index-page {
   margin-top: 90px;
-}
 
-.index-title {
-  margin-left: 20px;
-  margin-bottom: 20px
-}
+  .index-title {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
 
-a {
-  text-decoration: none;
-  &:hover { 
-  text-decoration: none;
+  .index-container {
+    display: flex;
+
+    .left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .index-cards {
+        display: flex;
+        flex-direction: column;
+        margin: 0 20px;
+
+        a {
+          text-decoration: none;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        .card-product {
+          overflow: hidden;
+          height: 240px;
+          background-color: white;
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 20px;
+          transition: all 0.2s ease-in-out;
+          z-index: 10;
+          color: black;
+
+          &:hover {
+            background: rgba(232, 232, 232, 0.5);
+            transform: scale(1.03);
+            color: rgb(37, 150, 190);
+          }
+        }
+
+        .card-product img {
+          height: 100%;
+          width: 360px;
+          object-fit: cover;
+        }
+
+        .card-product h2 {
+          font-size: 24px;
+          font-weight: bold;
+          margin: 0;
+        }
+
+        .card-product p {
+          font-size: 18px;
+          line-height: 1.4;
+          opacity: 0.7;
+          margin-bottom: 0;
+          margin-top: 8px;
+        }
+
+        .card-product .card-product-infos {
+          padding: 32px;
+        }
+      }
+    }
+    .right {
+      flex: 1;
+      display: flex;
+      width: 100%;
+      #map {
+        position: sticky;
+        top: 90px;
+        margin-bottom: 20px;
+      }
+    }
   }
 }

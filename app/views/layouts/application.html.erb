@@ -18,17 +18,13 @@
 
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-    <div class="d-flex flex-column min-vh-100">
       <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
 
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-      <div class="flex-grow-1">
         <%= yield %>
-      </div>
       <%= render 'shared/footer' %>
-    </div>
   </body>
 </html>
 

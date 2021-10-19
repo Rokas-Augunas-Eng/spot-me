@@ -16,114 +16,36 @@
 
 <div class="slider"></div>
 
-
-<div class="vid_holder">
+<div class="vid-holder">
   <%= video_tag "fitnessvid.mp4",autoplay: :autoplay, muted: :muted, size: "100%x100%", loop: :loop, mute: :mute, class: "video" %>
 </div>
 
-<div class="center_div">
-  <div class="video_content">
-    <h1 class="intro-text">SPOT ME</h1>
-      <h2 class="sub-text">Workout from home, wherever you are.</h2>
-    <div class="searchbar">
-      <%= form_tag gyms_path, method: "GET" do %>
-      <%#= label_tag :search_by_location, 'Where?' %>
-      <%= text_field_tag :search_by_location, params[:search_by_location],
-      placeholder: "Find a gym...", 
-      class: "searchbox"%>
-      <%= submit_tag "Search",
-      class: "search_button" %>
-      <% end %>
-    </div>
+<div class="video-content">
+  <h1 class="main-text">SPOT ME</h1>
+    <h2 class="sub-text">Workout from home, wherever you are.</h2>
+  <div class="searchbar">
+    <%= form_tag gyms_path, method: "GET" do %>
+    <%= text_field_tag :search_by_location, params[:search_by_location],
+    placeholder: "Find a gym...", 
+    class: "searchbox"%>
+    <%= submit_tag "Search",
+    class: "search_button" %>
+    <% end %>
   </div>
 </div>
 
-
-
-<div class="cardbox">
-  <div class="near_me">
-    <h4> Gyms near me </h4>
-  </div>
-  <div class="cards">
+<div class="bottom-container">
+  <h2>Gyms near me</h2>
+  <div class="bottom-cards">
     <% @gyms[0..3].each do |gym| %>
-    <div class="card rounded" style="width: 16rem;">
-      <%= cl_image_tag gym.photo.key, height: 300, width: 255, crop: :fill %>
-      <div class="card-body">
-        <h5 class="card-title"><%= link_to gym.name, gym_path(gym) %></h5>
+    <div class="bottom-card">
+    <%= link_to gym_path(gym) do %>
+      <%= cl_image_tag gym.photo.key, height: 200, width: 300, :class => "bottom-image" %>
+      <div class="bottom-card-text">
+        <p><%= gym.name %></p>
       </div>
+      <% end %>
     </div>
     <% end %>
   </div>
-  <div class="gym_type">
-    <h4> Gym Type</h4>
-  </div>
-  <div class="cards_gym_type">
-    <div class="card rounded" style="width: 16rem;">
-      <div class="card-img-top"><%= image_tag("gym_image_1", height: 300, width: 255, crop: :fill) %>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Cardio</h5>
-      </div>
-    </div>
-    <div class="card rounded" style="width: 16rem;">
-      <div class="card-img-top"><%= image_tag("gym_image_2", height: 300, width: 255, crop: :fill) %>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Weights</h5>
-      </div>
-    </div>
-    <div class="card rounded" style="width: 16rem;">
-      <div class="card-img-top"><%= image_tag("gym_image_3", height: 300, width: 255, crop: :fill) %>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Functional</h5>
-      </div>
-
-    </div>
-    <div class="card rounded" style="width: 16rem;">
-      <div class="card-img-top"><%= image_tag("gym_image_4", height: 300, width: 255, crop: :fill) %>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Crossfit</h5>
-      </div>
-    </div>
-  </div>
 </div>
-
-
-<!-- card-image-top height: 300, width: 400, crop: :fill -->
-
-<!-- <div class="position-relative">
-  <div class="p-2">
-    <div class="row">
-      <div class="col-sm-16 d-flex">
-        <div class="card rounded-1" style="width: 18rem;">
-          <img class="card-img-top" src="" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Gym name </h5>
-            <p class="card-text">Gym equipment </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
--->
-
-
-  <!--  <div class="col-sm-16 d-flex">
-     <%#@first_three.each do |gym| %>
-      <div class="card rounded-1" style="width: 18rem;">
-        <img class="card-img-top" src="<%# movie.poster_url %>" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Gym name<%#gym.name  %></h5>
-          <p class="card-text">Gym equipment<%# gym.equipment %> </p>
-        </div> -->
-
-<%# <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p> %>
-
-<% if user_signed_in? %>
-<% current_user.email %>
-<% end %>
-

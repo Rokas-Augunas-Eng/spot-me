@@ -126,14 +126,21 @@
       border-radius: 10px;
       transition: 0.3s;
       margin: 0 10px;
+      width: 300px;
+      align-items: normal;
 
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
         color: rgb(37, 150, 190);
+      }
+
+      a {
+        text-decoration: none;
       }
 
       .bottom-image {
         border-radius: 10px 10px 0px 0px;
+        width: 100%;
       }
 
       .bottom-card-text {

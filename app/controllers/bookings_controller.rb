@@ -1,12 +1,10 @@
 class BookingsController < ApplicationController
-  # before_action :find_gym, only: [:new, :create, :index]
 
   def index
     @bookings = Booking.all
   end
   
   def new
-  # @gym = Gym.find(params[:id])
   @booking = Booking.new 
   end
 

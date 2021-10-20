@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to gyms_path, class: "navbar-brand" do %>
     <%= image_tag "spot-me.png" %>
     <% end %>
 
@@ -11,9 +11,6 @@
     <ul class="navbar-nav mr-auto">
     <nav class="navbar navbar-light">
       <% if user_signed_in? %>
-        <%# <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        <%# </li> %>
         <li class="nav-item">
           <%= link_to "Profile", profile_path, class: "nav-link" %>
         </li>
@@ -25,7 +22,6 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Profile", profile_path, class: "dropdown-item" %>
             <%= link_to "Gyms", gyms_path, class: "dropdown-item" %>
-            <%= link_to "Home", profile_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

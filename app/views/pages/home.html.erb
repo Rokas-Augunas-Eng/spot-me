@@ -40,10 +40,10 @@
 <div class="bottom-container">
   <h2>Gyms near me</h2>
   <div class="bottom-cards">
-    <% @gyms[0..3].each do |gym| %>
+    <% @gyms[0..4].each do |gym| %>
     <div class="bottom-card">
     <%= link_to gym_path(gym) do %>
-      <%= cl_image_tag gym.photo.key, height: 200, width: 300, :class => "bottom-image" %>
+      <%= cl_image_tag gym.photo.key, height: 200, width: 400, :class => "bottom-image" %>
       <div class="bottom-card-text">
         <p><%= gym.name %></p>
       </div>

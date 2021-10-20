@@ -31,10 +31,10 @@
   color: white;
   background: #23b8bf;
   border-radius: 15px;
-  border: 2px solid black;
+  cursor: pointer;
 
   &:hover {
-    background: rgba(232, 232, 232, 0.5);
+    background: rgba(82, 73, 73, 0.5);
     transform: scale(1.1);
     color: rgb(37, 150, 190);
   }

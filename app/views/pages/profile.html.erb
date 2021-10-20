@@ -1,94 +1,48 @@
 <div class="profile-page">
-  <div id="wrapper">
-    <div class="container-fluid">
-
-      <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800"><%= "#{current_user.first_name} "%> Dashboard</h1>
-      </div>
-
-      <div class="row">
-
-
-        <!-- Area Chart -->
-        <div class="col-xl-4 col-lg-5">
-          <div class="card shadow mb-4">
-            <div
-            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h5 class="m-0 font-weight-bold">Upcoming Bookings</h5>
-
-
-          </div>
-
-          <div class="card-body">
-            <% current_user.bookings.each do |booking| %>
-            <%= link_to gyms_path do %>
-            <div class="card-product">
-            <div class="card-product-infos">
-            <p><i class="fas fa-home"></i> <%= booking.gym.name %></p>
-            <p><i class="fas fa-calendar-alt"></i> <%= booking.booking_start.strftime("%dth of %B at %I:%M %p") %></p>
-            <p><i class="fas fa-money-bill"></i> 
-            £<%= booking.gym.cost %> per session </p>
-            <div class="buttons">
-             <button type="button" class="btn btn-info"><%= link_to "Edit", edit_gym_booking_path(booking.gym, booking) %></button>
-            </div>
-            </div>
-          </div>
-            <% end %>
-            <% end %>
+  <h1><%= "#{current_user.first_name} "%> Dashboard</h1>
+  <div class="card-container">
+  <h3>Upcoming Bookings</h5>
+    <div class="profile-card">
+      <% current_user.bookings.each do |booking| %>
+      <%= link_to gyms_path do %>
+      <div class="card-product">
+        <div class="card-product-infos">
+          <p><i class="fas fa-home"></i> <%= booking.gym.name %></p>
+          <%# <p><i class="fas fa-calendar-alt"></i> <%= booking.booking_start.strftime("%dth of %B at %I:%M %p") %>
+          <p><i class="fas fa-money-bill"></i> £<%= booking.gym.cost %> per session </p>
+          <button type="button" class="btn btn-info"><%= link_to "Edit", edit_gym_booking_path(booking.gym, booking) %></button>
         </div>
       </div>
-      </div>
+      <% end %>
+      <% end %>
+    </div>
 
-      <div class="col-xl-4 col-lg-5">
-        <div class="card shadow mb-4">
-
-          <div
-          class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h5 class="m-0 font-weight-bold">My Gyms</h5>
-            <%= link_to "Add new gym", new_gym_path, class: "btn btn-primary" %>
-          </div>
-
-        <div class="card-body">
-          <% current_user.gyms.each do |gym| %>
-          <%= link_to gym_path(gym) do %>
-            <div class="card-product">
-              <div class="card-product-infos">
-                <h2><%= gym.name %></h2>
-                <p>Gym type: <%= gym.type_of_gym %></p>
-                <p>Equipment: <%= gym.equipment %></p>
-                <p>Location: <%= gym.location %></p>
-                <div class="buttons">
-                <button type="button" class="btn btn-danger"><%= link_to "Remove", gym_path(gym), method: :delete, data: { confirm: "If you delete this gym a bro will lose his gains! Are you sure?" } %></button>
-                <button type="button" class="btn btn-info"><%= link_to "Edit", edit_gym_path(gym) %></button>
-                </div>
-                <% if gym.photo.attached? %>
-              <%= cl_image_tag gym.photo.key, height: 120, width: 240, crop: :fill %>
-            <% else %>
-              <img src="https://www.leisureopportunities.co.uk/images/2020/HIGH346040_712133_137408.jpg" />
-            <% end %>
-            <% end %>
-            <% end %>
+    <div class="profile-card">
+    <h3>My Gyms</h3>
+      <%= link_to "Add new gym", new_gym_path, class: "btn btn-primary" %>
+      <div class="profile-card">
+        <% current_user.gyms.each do |gym| %>
+        <%= link_to gym_path(gym) do %>
+        <div class="card-product">
+          <div class="card-product-infos">
+            <h2><%= gym.name %></h2>
+            <p>Gym type: <%= gym.type_of_gym %></p>
+            <p>Equipment: <%= gym.equipment %></p>
+            <p>Location: <%= gym.location %></p>
+              <% if gym.photo.attached? %>
+                <%= cl_image_tag gym.photo.key, height: 120, width: 240, crop: :fill %>
+              <% else %>
+                <img src="https://www.leisureopportunities.co.uk/images/2020/HIGH346040_712133_137408.jpg" />
+              <% end %>
+            <div class="button-container">
+              <button type="button" class="btn btn-danger"><%= link_to "Remove", gym_path(gym), method: :delete, data: { confirm: "If you delete this gym a bro will lose his gains! Are you sure?" } %></button>
+              <button type="button" class="btn btn-info"><%= link_to "Edit", edit_gym_path(gym) %></button>
             </div>
           </div>
         </div>
+        <% end %>
+        <% end %>
       </div>
     </div>
-  </div>
-
-  <div class="row">
-
-    <div class="col-lg-6 mb-4">
-
-    </div>
-
-    <div class="col-lg-6 mb-4">
-    </div>
-  </div>
-
-  </div>
-  </div>
-
-
-  </div>
   </div>
 </div>
